@@ -35,7 +35,7 @@ export const Footer = () => {
           <h5 className="font-headline font-bold text-xs uppercase tracking-widest mb-8">Design Atelier</h5>
           <ul className="space-y-4">
             <li><a href="https://www.instagram.com/dekoderebysuave/" target="_blank" rel="noopener noreferrer" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Dékódèrè Instagram</a></li>
-            <li><Link to="/services" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Lighting Design</Link></li>
+            <li><a href="https://www.instagram.com/suave_innovations/" target="_blank" rel="noopener noreferrer" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Suave Instagram</a></li>
           </ul>
         </div>
 

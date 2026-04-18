@@ -30,12 +30,6 @@ export const CTA = () => {
           >
             Book a Consultation
           </Link>
-          <Link
-            to="/contact#inquiry"
-            className="font-body italic text-on-surface-variant underline decoration-on-surface-variant/20 underline-offset-[0.35rem] decoration-[1px] text-lg hover:text-on-surface transition-colors"
-          >
-            Contact Us
-          </Link>
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { Overview } from './Overview';
 import { Benefits } from './Benefits';
 import { Spaces } from './Spaces';
 import { SolarServices } from './SolarServices';
+import { SolarProjects } from './SolarProjects';
 import { Process } from './Process';
 import { Trust } from './Trust';
 import { CTA } from './CTA';
@@ -16,6 +17,7 @@ const Solar = () => {
       <Benefits />
       <Spaces />
       <SolarServices />
+      <SolarProjects />
       <Process />
       <Trust />
       <CTA />
