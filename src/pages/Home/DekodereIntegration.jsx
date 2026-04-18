@@ -30,14 +30,19 @@ export const DekodereIntegration = () => {
             From feature lighting to thoughtful interior touches, we create spaces that feel complete, comfortable, and beautifully resolved.
           </p>
           
-          <button className="group flex items-center gap-4 text-tertiary hover:text-on-surface transition-colors">
+          <a 
+            href="https://www.instagram.com/dekoderebysuave/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group flex items-center gap-4 text-tertiary hover:text-on-surface transition-colors"
+          >
             <span className="font-label text-xs uppercase tracking-widest font-bold">
               Explore Dékódèrè
             </span>
             <span className="material-symbols-outlined transition-transform group-hover:translate-x-2">
               arrow_right_alt
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </section>

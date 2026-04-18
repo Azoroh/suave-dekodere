@@ -18,7 +18,7 @@ export const Footer = () => {
             Suave Innovations delivers solar, smart systems, security, and electrical solutions for modern homes and businesses in Lagos, with Dékódèrè providing the refined interior finishing layer.
           </p>
           <p className="font-label text-[10px] uppercase tracking-widest text-[#30332f]/40">
-            © 2024 Suave Innovations & Dékódèrè. Lagos, Nigeria.
+            © 2025 Suave Innovations & Dékódèrè. Lagos, Nigeria.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export const Footer = () => {
         <div>
           <h5 className="font-headline font-bold text-xs uppercase tracking-widest mb-8">Design Atelier</h5>
           <ul className="space-y-4">
-            <li><Link to="/services" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Dékódèrè Gallery</Link></li>
+            <li><a href="https://www.instagram.com/dekoderebysuave/" target="_blank" rel="noopener noreferrer" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Dékódèrè Instagram</a></li>
             <li><Link to="/services" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Lighting Design</Link></li>
           </ul>
         </div>
@@ -47,8 +47,12 @@ export const Footer = () => {
             </li>
             <li><Link to="/contact#inquiry" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Contact Us</Link></li>
             <li className="pt-4 flex gap-4">
-              <span className="material-symbols-outlined text-on-surface/40 hover:text-secondary cursor-pointer">share</span>
-              <span className="material-symbols-outlined text-on-surface/40 hover:text-secondary cursor-pointer">public</span>
+              <a href="https://www.instagram.com/suave_innovations/" target="_blank" rel="noopener noreferrer" title="Suave Innovations Instagram">
+                <span className="material-symbols-outlined text-on-surface/40 hover:text-secondary cursor-pointer">public</span>
+              </a>
+              <a href="https://www.instagram.com/dekoderebysuave/" target="_blank" rel="noopener noreferrer" title="Dékódèrè Instagram">
+                <span className="material-symbols-outlined text-on-surface/40 hover:text-tertiary cursor-pointer">palette</span>
+              </a>
             </li>
           </ul>
         </div>

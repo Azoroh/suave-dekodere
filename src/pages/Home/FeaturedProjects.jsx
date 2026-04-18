@@ -63,9 +63,14 @@ export const FeaturedProjects = () => {
         </div>
         
         <div className="mt-24 flex justify-center">
-          <Button variant="outlineDark" size="xl">
+          <a 
+            href="https://www.instagram.com/suave_innovations/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="border border-outline-variant/30 text-on-surface hover:bg-on-surface hover:text-surface-bright transition-all px-12 py-5 font-label text-xs uppercase tracking-widest"
+          >
             View All Projects
-          </Button>
+          </a>
         </div>
       </div>
     </section>
