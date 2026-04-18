@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+    font-size: 20px;
+}
+.editorial-underline {
+    text-underline-offset: 0.35rem;
+    text-decoration-thickness: 1px;
+}
+.glass-nav {
+    background-color: rgba(251, 249, 246, 0.8);
+    backdrop-filter: blur(20px);
+}
