@@ -62,7 +62,7 @@ export const SolarProjects = () => {
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                  className="w-full h-full object-cover grayscale-0 lg:grayscale-[30%] lg:group-hover:grayscale-0 lg:group-hover:scale-105 transition-all duration-700 ease-out"
                 />
                 <div className="absolute top-6 left-6">
                   <span className="px-4 py-2 bg-on-surface/80 backdrop-blur-sm text-surface-bright font-label text-[10px] uppercase tracking-widest font-bold">

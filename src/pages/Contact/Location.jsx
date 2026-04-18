@@ -9,7 +9,7 @@ export const Location = () => {
           <iframe
             title="Suave Innovations Office Location"
             src="https://maps.google.com/maps?q=Victoria+Island,+Lagos,+Nigeria&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
+            className="w-full h-full border-0 grayscale-0 lg:grayscale lg:hover:grayscale-0 transition-all duration-700"
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"

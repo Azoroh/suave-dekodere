@@ -13,7 +13,7 @@ export const Leadership = () => {
               <img 
                 src="https://scontent-los4-1.cdninstagram.com/v/t51.82787-15/609536376_18343581004238141_9219837350074377048_n.jpg?stp=dst-jpg_e35_p720x720_tt6&amp;_nc_cat=104&amp;ig_cache_key=Mzc5OTkyNDEyNzY5MjU5NzU3NA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&amp;_nc_ohc=T5xnyarhoDcQ7kNvwFRmmE-&amp;_nc_oc=Adqj2K2KHo_EI2xzbFVOwkPs6MY5zcxligH8t8OvniSMHm0COwQiagZkTIArqvLesM4&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_zt=23&amp;_nc_ht=scontent-los4-1.cdninstagram.com&amp;_nc_gid=z9q8gVCDTTGiRSj9hOX9Fg&amp;_nc_ss=7a32e&amp;oh=00_Af1JsPiNGrf7Humu0FNGnc-QteJa-J-lVkA6raZAlVqQdQ&amp;oe=69E95FB6" 
                 alt="Suave Innovations Founder" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 group-hover:scale-100"
+                className="w-full h-full object-cover grayscale-0 lg:grayscale lg:group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 lg:group-hover:scale-100"
               />
             </div>
             {/* Decorative accent */}
