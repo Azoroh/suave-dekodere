@@ -183,6 +183,60 @@
         transform: translateY(0);
     }
 
+    .micro-form-field {
+        position: relative;
+    }
+
+    .micro-form-label {
+        transition: color 220ms ease-out, transform 220ms ease-out;
+    }
+
+    .micro-form-field:focus-within .micro-form-label {
+        color: #4b6367;
+        transform: translateY(-2px);
+    }
+
+    .micro-form-control {
+        transition-property: border-color, box-shadow, background-color;
+        transition-duration: 220ms;
+        transition-timing-function: ease-out;
+    }
+
+    .micro-form-control:focus {
+        box-shadow: 0 10px 24px rgba(75, 99, 103, 0.08);
+    }
+
+    .micro-form-error {
+        animation: micro-form-error-in 180ms ease-out both;
+    }
+
+    .micro-loading-spinner {
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid currentColor;
+        border-right-color: transparent;
+        border-radius: 9999px;
+        animation: micro-spin 720ms linear infinite;
+    }
+
+    @keyframes micro-spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes micro-form-error-in {
+        from {
+            opacity: 0;
+            transform: translateY(-4px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     @media (prefers-reduced-motion: reduce) {
         .micro-button,
         .micro-text-link,
@@ -194,7 +248,9 @@
         .micro-service-line,
         .micro-project-image img,
         .micro-project-image::after,
-        .micro-project-caption {
+        .micro-project-caption,
+        .micro-form-label,
+        .micro-form-control {
             transition-duration: 1ms;
         }
 
@@ -206,12 +262,18 @@
         .micro-service-card:hover .material-symbols-outlined,
         .micro-service-line:hover,
         .micro-project-image:hover img,
-        .micro-project-image:hover .micro-project-caption {
+        .micro-project-image:hover .micro-project-caption,
+        .micro-form-field:focus-within .micro-form-label {
             transform: none;
         }
 
         .micro-service-line:hover {
             padding-left: 0;
+        }
+
+        .micro-loading-spinner,
+        .micro-form-error {
+            animation: none;
         }
     }
 }

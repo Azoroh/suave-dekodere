@@ -101,11 +101,13 @@ export const ContactForm = () => {
     }
   };
 
-  const labelClass = 'font-label text-[10px] uppercase tracking-widest text-on-surface/50 mb-2 block';
+  const fieldClass = 'micro-form-field';
+  const labelClass = 'micro-form-label font-label text-[10px] uppercase tracking-widest text-on-surface/50 mb-2 block';
   const inputClass = (name) =>
-    `w-full bg-transparent border-0 border-b py-3 px-0 focus:ring-0 transition-all font-body text-lg placeholder:text-on-surface/20 outline-none ${
-      errors[name] ? 'border-error focus:border-error' : 'border-outline-variant/30 focus:border-on-surface'
+    `micro-form-control w-full bg-transparent border-0 border-b py-3 px-0 focus:ring-0 font-body text-lg placeholder:text-on-surface/20 outline-none ${
+      errors[name] ? 'border-error bg-error/5 focus:border-error' : 'border-outline-variant/30 focus:border-secondary'
     }`;
+  const errorClass = 'micro-form-error font-label text-[10px] text-error mt-2';
 
   if (submitted) {
     return (
@@ -142,7 +144,7 @@ export const ContactForm = () => {
           <form onSubmit={handleSubmit} noValidate className="space-y-12">
             {/* Name + Phone */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div id="field-name">
+              <div id="field-name" className={fieldClass}>
                 <label className={labelClass}>
                   Full Name <span className="text-error">*</span>
                 </label>
@@ -155,10 +157,10 @@ export const ContactForm = () => {
                   type="text"
                 />
                 {errors.name && (
-                  <p className="font-label text-[10px] text-error mt-2">{errors.name}</p>
+                  <p className={errorClass}>{errors.name}</p>
                 )}
               </div>
-              <div id="field-phone">
+              <div id="field-phone" className={fieldClass}>
                 <label className={labelClass}>
                   Phone Number <span className="text-error">*</span>
                 </label>
@@ -174,7 +176,7 @@ export const ContactForm = () => {
             </div>
 
             {/* Email */}
-            <div id="field-email">
+            <div id="field-email" className={fieldClass}>
               <label className={labelClass}>
                 Email Address <span className="text-error">*</span>
               </label>
@@ -187,13 +189,13 @@ export const ContactForm = () => {
                 type="email"
               />
               {errors.email && (
-                <p className="font-label text-[10px] text-error mt-2">{errors.email}</p>
+                <p className={errorClass}>{errors.email}</p>
               )}
             </div>
 
             {/* Project Type + Service */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div>
+              <div className={fieldClass}>
                 <label className={labelClass}>
                   Type of Project <span className="text-error">*</span>
                 </label>
@@ -209,7 +211,7 @@ export const ContactForm = () => {
                   <option value="Industrial">Industrial</option>
                 </select>
               </div>
-              <div>
+              <div className={fieldClass}>
                 <label className={labelClass}>
                   Service Needed <span className="text-error">*</span>
                 </label>
@@ -228,7 +230,7 @@ export const ContactForm = () => {
             </div>
 
             {/* Message */}
-            <div>
+            <div className={fieldClass}>
               <label className={labelClass}>Tell Us About Your Space</label>
               <textarea
                 name="message"
@@ -241,19 +243,23 @@ export const ContactForm = () => {
             </div>
 
             {errors.submit && (
-              <p className="font-label text-xs text-error mb-4 bg-error/10 p-4">{errors.submit}</p>
+              <p className="micro-form-error font-label text-xs text-error mb-4 bg-error/10 p-4">{errors.submit}</p>
             )}
 
             <button
               type="submit"
               disabled={!canSubmit || isSending}
-              className={`font-label text-xs uppercase tracking-[0.2em] px-12 py-5 transition-all ${
+              aria-busy={isSending}
+              className={`font-label text-xs uppercase tracking-[0.2em] px-12 py-5 transition-all inline-flex items-center justify-center gap-3 min-w-[220px] ${
                 canSubmit && !isSending
                   ? 'micro-button bg-[#2C2C2C] hover:bg-black text-white cursor-pointer'
-                  : 'bg-on-surface/10 text-on-surface/30 cursor-not-allowed'
+                  : isSending
+                    ? 'bg-[#2C2C2C] text-white cursor-wait'
+                    : 'bg-on-surface/10 text-on-surface/30 cursor-not-allowed'
               }`}
             >
-              {isSending ? 'Sending...' : 'Submit Inquiry'}
+              {isSending && <span className="micro-loading-spinner" aria-hidden="true" />}
+              {isSending ? 'Sending Inquiry' : 'Submit Inquiry'}
             </button>
           </form>
         </div>
