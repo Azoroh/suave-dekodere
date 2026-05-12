@@ -1,4 +1,5 @@
 import React from 'react';
+import { ScrollReveal } from '../../components/ui/ScrollReveal';
 import { Hero } from './Hero';
 import { Overview } from './Overview';
 import { Benefits } from './Benefits';
@@ -13,14 +14,14 @@ const Solar = () => {
   return (
     <>
       <Hero />
-      <Overview />
-      <Benefits />
-      <Spaces />
-      <SolarServices />
-      <SolarProjects />
-      <Process />
-      <Trust />
-      <CTA />
+      <ScrollReveal><Overview /></ScrollReveal>
+      <ScrollReveal><Benefits /></ScrollReveal>
+      <ScrollReveal><Spaces /></ScrollReveal>
+      <ScrollReveal><SolarServices /></ScrollReveal>
+      <ScrollReveal><SolarProjects /></ScrollReveal>
+      <ScrollReveal><Process /></ScrollReveal>
+      <ScrollReveal><Trust /></ScrollReveal>
+      <ScrollReveal><CTA /></ScrollReveal>
     </>
   );
 };

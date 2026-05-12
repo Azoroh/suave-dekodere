@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { ScrollReveal } from '../../components/ui/ScrollReveal';
 import { Hero } from './Hero';
 import { ContactMethods } from './ContactMethods';
 import { ContactForm } from './ContactForm';
@@ -23,9 +24,9 @@ const Contact = () => {
   return (
     <>
       <Hero />
-      <ContactMethods />
-      <ContactForm />
-      <Location />
+      <ScrollReveal><ContactMethods /></ScrollReveal>
+      <ScrollReveal><ContactForm /></ScrollReveal>
+      <ScrollReveal><Location /></ScrollReveal>
     </>
   );
 };
