@@ -135,6 +135,54 @@
         border-color: rgba(75, 99, 103, 0.35);
     }
 
+    .micro-project-image {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+    }
+
+    .micro-project-image img {
+        transform: scale(1);
+        transition: transform 900ms ease-out, filter 900ms ease-out;
+        will-change: transform;
+    }
+
+    .micro-project-image::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(24, 26, 24, 0) 30%, rgba(24, 26, 24, 0.62) 100%);
+        opacity: 0;
+        transition: opacity 360ms ease-out;
+        pointer-events: none;
+    }
+
+    .micro-project-image:hover img {
+        transform: scale(1.055);
+    }
+
+    .micro-project-image:hover::after {
+        opacity: 1;
+    }
+
+    .micro-project-caption {
+        position: absolute;
+        left: 1.5rem;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        z-index: 2;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 280ms ease-out, transform 280ms ease-out;
+        pointer-events: none;
+    }
+
+    .micro-project-image:hover .micro-project-caption {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     @media (prefers-reduced-motion: reduce) {
         .micro-button,
         .micro-text-link,
@@ -143,7 +191,10 @@
         .micro-service-card,
         .micro-service-card::before,
         .micro-service-card .material-symbols-outlined,
-        .micro-service-line {
+        .micro-service-line,
+        .micro-project-image img,
+        .micro-project-image::after,
+        .micro-project-caption {
             transition-duration: 1ms;
         }
 
@@ -153,7 +204,9 @@
         .micro-text-link:hover .material-symbols-outlined,
         .micro-service-card:hover,
         .micro-service-card:hover .material-symbols-outlined,
-        .micro-service-line:hover {
+        .micro-service-line:hover,
+        .micro-project-image:hover img,
+        .micro-project-image:hover .micro-project-caption {
             transform: none;
         }
 

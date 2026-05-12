@@ -58,15 +58,23 @@ export const SolarProjects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 transition-all duration-500 ease-in-out">
           {displayedProjects.map((project) => (
             <div key={project.id} className="group overflow-hidden">
-              <div className="aspect-[16/10] overflow-hidden bg-surface-container-highest mb-8 relative">
+              <div className="micro-project-image aspect-[16/10] bg-surface-container-highest mb-8">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover grayscale-0 lg:grayscale-[30%] lg:group-hover:grayscale-0 lg:group-hover:scale-105 transition-all duration-700 ease-out"
+                  className="w-full h-full object-cover grayscale-0 lg:grayscale-[30%] lg:group-hover:grayscale-0"
                 />
-                <div className="absolute top-6 left-6">
+                <div className="absolute top-6 left-6 z-20">
                   <span className="px-4 py-2 bg-on-surface/80 backdrop-blur-sm text-surface-bright font-label text-[10px] uppercase tracking-widest font-bold">
                     {project.type}
+                  </span>
+                </div>
+                <div className="micro-project-caption">
+                  <span className="font-label text-[10px] uppercase tracking-widest text-surface-bright/70 block mb-2">
+                    {project.location}
+                  </span>
+                  <span className="font-headline text-2xl font-bold text-surface-bright">
+                    {project.title}
                   </span>
                 </div>
               </div>
