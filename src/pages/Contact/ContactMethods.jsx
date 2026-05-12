@@ -38,7 +38,7 @@ export const ContactMethods = () => {
     <section className="px-6 md:px-16 mb-24 md:mb-40 max-w-[1440px] mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline-variant/20">
         {methods.map(({ icon, title, body, linkLabel, href, bg, isScroll }) => (
-          <div key={title} className={`p-10 ${bg} group`}>
+          <div key={title} className={`micro-service-card p-10 ${bg} group`}>
             <span className="material-symbols-outlined text-secondary text-3xl mb-8 block">{icon}</span>
             <h3 className="font-headline font-bold text-xl mb-4">{title}</h3>
             <p className="font-body text-on-surface/70 leading-relaxed mb-8">{body}</p>

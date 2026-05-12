@@ -24,7 +24,7 @@ export const Process = () => {
       <div className="max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-outline-variant/20">
           {steps.map(({ number, title, body }) => (
-            <div key={number} className="bg-surface p-12 hover:bg-surface-container-low transition-colors duration-500">
+            <div key={number} className="micro-service-card bg-surface p-12 hover:bg-surface-container-low transition-colors duration-500">
               <span className="font-headline text-5xl font-black text-outline-variant/20 mb-8 block">
                 {number}
               </span>

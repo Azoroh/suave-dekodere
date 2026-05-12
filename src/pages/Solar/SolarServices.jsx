@@ -27,7 +27,7 @@ export const SolarServices = () => {
           {services.map((service) => (
             <div
               key={service}
-              className="flex items-center justify-between border-b border-outline-variant/20 pb-6 group cursor-default"
+              className="micro-service-line flex items-center justify-between border-b border-outline-variant/20 pb-6 group cursor-default"
             >
               <span className="font-headline font-bold text-lg uppercase group-hover:text-secondary transition-colors duration-300">
                 {service}

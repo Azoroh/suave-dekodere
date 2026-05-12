@@ -21,7 +21,7 @@ export const SmartSystems = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Smart Systems Card */}
-          <div className="bg-surface p-12 flex flex-col justify-between aspect-square">
+          <div className="micro-service-card bg-surface p-12 flex flex-col justify-between aspect-square">
             <div>
               <span className="material-symbols-outlined text-3xl mb-8 block text-on-surface">
                 settings_input_component
@@ -54,7 +54,7 @@ export const SmartSystems = () => {
           </div>
 
           {/* Electrical Card (Horizontal) */}
-          <div className="md:col-span-3 bg-secondary text-surface-bright p-12 flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="micro-service-card md:col-span-3 bg-secondary text-surface-bright p-12 flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="max-w-xl">
               <h3 className="font-headline text-3xl font-bold mb-6">Electrical Engineering</h3>
               <p className="font-body text-xl text-surface-bright/70 italic">

@@ -13,7 +13,7 @@ export const Process = () => {
       </div>
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline-variant/30">
-        <div className="bg-surface py-16 px-12 md:py-20 md:px-16 text-center hover:bg-surface-container-low transition-colors duration-500">
+        <div className="micro-service-card bg-surface py-16 px-12 md:py-20 md:px-16 text-center hover:bg-surface-container-low transition-colors duration-500">
           <div className="w-16 h-16 bg-surface-container mx-auto flex items-center justify-center mb-10">
             <span className="font-headline font-bold text-2xl">01</span>
           </div>
@@ -23,7 +23,7 @@ export const Process = () => {
           </p>
         </div>
         
-        <div className="bg-surface py-16 px-12 md:py-20 md:px-16 text-center hover:bg-surface-container-low transition-colors duration-500">
+        <div className="micro-service-card bg-surface py-16 px-12 md:py-20 md:px-16 text-center hover:bg-surface-container-low transition-colors duration-500">
           <div className="w-16 h-16 bg-surface-container mx-auto flex items-center justify-center mb-10">
             <span className="font-headline font-bold text-2xl text-secondary">02</span>
           </div>
@@ -33,7 +33,7 @@ export const Process = () => {
           </p>
         </div>
         
-        <div className="bg-surface py-16 px-12 md:py-20 md:px-16 text-center hover:bg-surface-container-low transition-colors duration-500">
+        <div className="micro-service-card bg-surface py-16 px-12 md:py-20 md:px-16 text-center hover:bg-surface-container-low transition-colors duration-500">
           <div className="w-16 h-16 bg-surface-container mx-auto flex items-center justify-center mb-10">
             <span className="font-headline font-bold text-2xl text-tertiary">03</span>
           </div>

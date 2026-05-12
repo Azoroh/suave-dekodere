@@ -17,7 +17,7 @@ export const CoreInfrastructure = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-x-16 md:gap-y-24">
           {/* Service 1: Solar */}
-          <div className="group">
+          <div className="micro-service-card group p-4 -m-4">
             <div className="mb-8 overflow-hidden aspect-[4/5] bg-surface-container">
               <img 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -35,7 +35,7 @@ export const CoreInfrastructure = () => {
           </div>
           
           {/* Service 2: Backup Power */}
-          <div className="group md:mt-12">
+          <div className="micro-service-card group p-4 -m-4 md:mt-12">
             <div className="mb-8 overflow-hidden aspect-[4/5] bg-surface-container">
               <img 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -53,7 +53,7 @@ export const CoreInfrastructure = () => {
           </div>
           
           {/* Service 3: Smart Home */}
-          <div className="group">
+          <div className="micro-service-card group p-4 -m-4">
             <div className="mb-8 overflow-hidden aspect-[4/5] bg-surface-container">
               <img 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -71,7 +71,7 @@ export const CoreInfrastructure = () => {
           </div>
           
           {/* Service 4: CCTV */}
-          <div className="group">
+          <div className="micro-service-card group p-4 -m-4">
             <div className="mb-8 overflow-hidden aspect-[16/9] w-full bg-surface-container">
               <img 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
@@ -89,7 +89,7 @@ export const CoreInfrastructure = () => {
           </div>
           
           {/* Service 5: Electrical */}
-          <div className="group md:col-span-2">
+          <div className="micro-service-card group p-4 -m-4 md:col-span-2">
             <div className="mb-8 overflow-hidden aspect-[21/9] w-full bg-surface-container">
               <img 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 

@@ -88,19 +88,77 @@
         transform: scaleX(1);
     }
 
+    .micro-service-card {
+        position: relative;
+        transition-property: background-color, border-color, box-shadow, transform;
+        transition-duration: 260ms;
+        transition-timing-function: ease-out;
+        will-change: transform;
+    }
+
+    .micro-service-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border: 1px solid transparent;
+        pointer-events: none;
+        transition: border-color 260ms ease-out;
+    }
+
+    .micro-service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 54px rgba(48, 51, 47, 0.12);
+    }
+
+    .micro-service-card:hover::before {
+        border-color: rgba(75, 99, 103, 0.28);
+    }
+
+    .micro-service-card .material-symbols-outlined {
+        transition: color 260ms ease-out, transform 260ms ease-out;
+    }
+
+    .micro-service-card:hover .material-symbols-outlined {
+        transform: translateY(-2px);
+    }
+
+    .micro-service-line {
+        position: relative;
+        transition-property: background-color, border-color, color, padding, transform;
+        transition-duration: 240ms;
+        transition-timing-function: ease-out;
+    }
+
+    .micro-service-line:hover {
+        padding-left: 0.75rem;
+        transform: translateX(2px);
+        border-color: rgba(75, 99, 103, 0.35);
+    }
+
     @media (prefers-reduced-motion: reduce) {
         .micro-button,
         .micro-text-link,
         .micro-text-link .material-symbols-outlined,
-        .micro-nav-link::after {
+        .micro-nav-link::after,
+        .micro-service-card,
+        .micro-service-card::before,
+        .micro-service-card .material-symbols-outlined,
+        .micro-service-line {
             transition-duration: 1ms;
         }
 
         .micro-button:hover,
         .micro-button:active,
         .micro-text-link:hover,
-        .micro-text-link:hover .material-symbols-outlined {
+        .micro-text-link:hover .material-symbols-outlined,
+        .micro-service-card:hover,
+        .micro-service-card:hover .material-symbols-outlined,
+        .micro-service-line:hover {
             transform: none;
+        }
+
+        .micro-service-line:hover {
+            padding-left: 0;
         }
     }
 }
