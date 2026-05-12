@@ -25,17 +25,17 @@ export const Footer = () => {
         <div>
           <h5 className="font-headline font-bold text-xs uppercase tracking-widest mb-8">Infrastructure</h5>
           <ul className="space-y-4">
-            <li><Link to="/solar" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Solar Systems</Link></li>
-            <li><Link to="/services" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Integrated Control</Link></li>
-            <li><Link to="/services" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Power Distribution</Link></li>
+            <li><Link to="/solar" className="micro-text-link font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Solar Systems</Link></li>
+            <li><Link to="/services" className="micro-text-link font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Integrated Control</Link></li>
+            <li><Link to="/services" className="micro-text-link font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Power Distribution</Link></li>
           </ul>
         </div>
 
         <div>
           <h5 className="font-headline font-bold text-xs uppercase tracking-widest mb-8">Design Atelier</h5>
           <ul className="space-y-4">
-            <li><a href="https://www.instagram.com/dekoderebysuave/" target="_blank" rel="noopener noreferrer" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Dékódèrè Instagram</a></li>
-            <li><a href="https://www.instagram.com/suave_innovations/" target="_blank" rel="noopener noreferrer" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Suave Instagram</a></li>
+            <li><a href="https://www.instagram.com/dekoderebysuave/" target="_blank" rel="noopener noreferrer" className="micro-text-link font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Dékódèrè Instagram</a></li>
+            <li><a href="https://www.instagram.com/suave_innovations/" target="_blank" rel="noopener noreferrer" className="micro-text-link font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Suave Instagram</a></li>
           </ul>
         </div>
 
@@ -45,12 +45,12 @@ export const Footer = () => {
             <li className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60">
               Book a consultation for residential and commercial projects
             </li>
-            <li><Link to="/contact#inquiry" className="font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Contact Us</Link></li>
+            <li><Link to="/contact#inquiry" className="micro-text-link font-label text-[11px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367] transition-colors">Contact Us</Link></li>
             <li className="pt-4 flex gap-4">
-              <a href="https://www.instagram.com/suave_innovations/" target="_blank" rel="noopener noreferrer" title="Suave Innovations Instagram">
+              <a href="https://www.instagram.com/suave_innovations/" target="_blank" rel="noopener noreferrer" title="Suave Innovations Instagram" className="micro-text-link">
                 <span className="material-symbols-outlined text-on-surface/40 hover:text-secondary cursor-pointer">public</span>
               </a>
-              <a href="https://www.instagram.com/dekoderebysuave/" target="_blank" rel="noopener noreferrer" title="Dékódèrè Instagram">
+              <a href="https://www.instagram.com/dekoderebysuave/" target="_blank" rel="noopener noreferrer" title="Dékódèrè Instagram" className="micro-text-link">
                 <span className="material-symbols-outlined text-on-surface/40 hover:text-tertiary cursor-pointer">palette</span>
               </a>
             </li>

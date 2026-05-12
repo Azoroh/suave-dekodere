@@ -38,7 +38,7 @@ export const SolarEnergy = () => {
               </div>
             </li>
           </ul>
-          <a className="font-body text-secondary italic text-lg underline editorial-underline hover:text-on-surface transition-colors" href="#">
+          <a className="micro-text-link font-body text-secondary italic text-lg underline editorial-underline hover:text-on-surface transition-colors" href="#">
             Explore Solar Solutions
           </a>
         </div>

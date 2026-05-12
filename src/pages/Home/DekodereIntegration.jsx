@@ -34,7 +34,7 @@ export const DekodereIntegration = () => {
             href="https://www.instagram.com/dekoderebysuave/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="group flex items-center gap-4 text-tertiary hover:text-on-surface transition-colors"
+            className="micro-text-link group flex items-center gap-4 text-tertiary hover:text-on-surface transition-colors"
           >
             <span className="font-label text-xs uppercase tracking-widest font-bold">
               Explore Dékódèrè

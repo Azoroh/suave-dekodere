@@ -38,9 +38,9 @@ export const Navbar = ({ isGlass = true }) => {
                 key={link.name}
                 to={link.href}
                 onClick={() => window.scrollTo(0, 0)}
-                className={`text-xs font-label uppercase tracking-widest transition-all duration-300 ${
+                className={`micro-nav-link text-xs font-label uppercase tracking-widest transition-all duration-300 ${
                   isActive 
-                    ? 'text-[#4b6367] font-bold border-b border-[#4b6367]' 
+                    ? 'is-active text-[#4b6367] font-bold' 
                     : 'text-[#30332f] opacity-70 hover:opacity-100 hover:text-[#4b6367]'
                 }`}
               >
@@ -60,7 +60,7 @@ export const Navbar = ({ isGlass = true }) => {
 
         {/* Mobile Hamburger Button */}
         <button 
-          className="md:hidden text-[#30332f] p-2"
+          className="micro-button md:hidden text-[#30332f] p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <span className="material-symbols-outlined text-2xl">
@@ -78,7 +78,7 @@ export const Navbar = ({ isGlass = true }) => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-sm font-label uppercase tracking-widest transition-all duration-300 ${
+                className={`micro-text-link text-sm font-label uppercase tracking-widest transition-all duration-300 ${
                   isActive 
                     ? 'text-[#4b6367] font-bold' 
                     : 'text-[#30332f] hover:text-[#4b6367]'

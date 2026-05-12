@@ -118,7 +118,7 @@ export const ContactForm = () => {
           </p>
           <button
             onClick={() => { setForm(initialForm); setErrors({}); setSubmitted(false); }}
-            className="font-label text-xs uppercase tracking-widest text-secondary border-b border-secondary/40 pb-1 hover:border-secondary transition-all"
+            className="micro-text-link font-label text-xs uppercase tracking-widest text-secondary border-b border-secondary/40 pb-1 hover:border-secondary transition-all"
           >
             Submit another inquiry
           </button>
@@ -249,7 +249,7 @@ export const ContactForm = () => {
               disabled={!canSubmit || isSending}
               className={`font-label text-xs uppercase tracking-[0.2em] px-12 py-5 transition-all ${
                 canSubmit && !isSending
-                  ? 'bg-[#2C2C2C] hover:bg-black text-white active:scale-95 cursor-pointer'
+                  ? 'micro-button bg-[#2C2C2C] hover:bg-black text-white cursor-pointer'
                   : 'bg-on-surface/10 text-on-surface/30 cursor-not-allowed'
               }`}
             >

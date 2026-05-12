@@ -86,7 +86,7 @@ export const SolarProjects = () => {
         <div className="mt-20 flex justify-center">
           <button 
             onClick={() => setIsExpanded(!isExpanded)}
-            className="flex items-center gap-4 group"
+            className="micro-text-link flex items-center gap-4 group"
           >
             <div className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center group-hover:bg-on-surface group-hover:border-on-surface transition-all duration-300">
               <span className={`material-symbols-outlined text-on-surface group-hover:text-surface-bright transition-transform duration-500 ${isExpanded ? 'rotate-180' : ''}`}>

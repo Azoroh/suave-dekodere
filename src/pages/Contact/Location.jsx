@@ -1,6 +1,9 @@
 import React from 'react';
 
 export const Location = () => {
+  const address = '10a, Paul Odulaja Street, Lagos, Nigeria 100234';
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+
   return (
     <section className="px-6 md:px-16 py-24 md:py-40 max-w-[1440px] mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -8,7 +11,7 @@ export const Location = () => {
         <div className="order-2 md:order-1 h-[600px] bg-surface-container overflow-hidden">
           <iframe
             title="Suave Innovations Office Location"
-            src="https://maps.google.com/maps?q=Victoria+Island,+Lagos,+Nigeria&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            src={mapSrc}
             className="w-full h-full border-0 grayscale-0 lg:grayscale lg:hover:grayscale-0 transition-all duration-700"
             loading="lazy"
             allowFullScreen
@@ -26,7 +29,7 @@ export const Location = () => {
           </p>
           <div className="flex items-center gap-4 text-secondary">
             <span className="material-symbols-outlined">location_on</span>
-            <span className="font-label text-sm uppercase tracking-widest font-bold">Lagos, Nigeria</span>
+            <span className="font-label text-sm uppercase tracking-widest font-bold">{address}</span>
           </div>
         </div>
       </div>

@@ -67,7 +67,7 @@ export const FeaturedProjects = () => {
             href="https://www.instagram.com/suave_innovations/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="border border-outline-variant/30 text-on-surface hover:bg-on-surface hover:text-surface-bright transition-all px-12 py-5 font-label text-xs uppercase tracking-widest"
+            className="micro-button border border-outline-variant/30 text-on-surface hover:bg-on-surface hover:text-surface-bright px-12 py-5 font-label text-xs uppercase tracking-widest"
           >
             View All Projects
           </a>

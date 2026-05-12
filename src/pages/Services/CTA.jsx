@@ -22,7 +22,7 @@ export const CTA = () => {
                 Book a Consultation
               </Button>
             </Link>
-            <Link to="/contact" className="border-b-2 border-primary text-primary px-2 py-4 font-label text-[0.85rem] uppercase tracking-[0.2em] hover:text-secondary hover:border-secondary transition-all flex items-center gap-3">
+            <Link to="/contact" className="micro-text-link border-b-2 border-primary text-primary px-2 py-4 font-label text-[0.85rem] uppercase tracking-[0.2em] hover:text-secondary hover:border-secondary transition-all flex items-center gap-3">
               Contact Us
               <span className="material-symbols-outlined">arrow_forward</span>
             </Link>

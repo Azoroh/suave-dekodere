@@ -23,7 +23,7 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
             <button
               onClick={scrollToForm}
-              className="bg-[#2C2C2C] hover:bg-black text-white font-label text-xs uppercase tracking-[0.15em] px-8 py-4 transition-all active:scale-95"
+              className="micro-button bg-[#2C2C2C] hover:bg-black text-white font-label text-xs uppercase tracking-[0.15em] px-8 py-4"
             >
               Book a Consultation
             </button>
@@ -31,7 +31,7 @@ export const Hero = () => {
               href="https://wa.me/2340000000000"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body italic text-tertiary text-lg border-b border-tertiary/30 pb-1 hover:border-tertiary transition-all"
+              className="micro-text-link font-body italic text-tertiary text-lg border-b border-tertiary/30 pb-1 hover:border-tertiary transition-all"
             >
               Call or WhatsApp
             </a>

@@ -14,3 +14,93 @@
     background-color: rgba(251, 249, 246, 0.8);
     backdrop-filter: blur(20px);
 }
+
+@layer components {
+    .micro-button {
+        position: relative;
+        transform: translateY(0);
+        transition-property: color, background-color, border-color, box-shadow, transform;
+        transition-duration: 220ms;
+        transition-timing-function: ease-out;
+        will-change: transform;
+    }
+
+    .micro-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 32px rgba(48, 51, 47, 0.14);
+    }
+
+    .micro-button:active {
+        transform: translateY(0) scale(0.98);
+        box-shadow: 0 8px 18px rgba(48, 51, 47, 0.12);
+    }
+
+    .micro-button:focus-visible,
+    .micro-text-link:focus-visible,
+    .micro-nav-link:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 0.35rem;
+    }
+
+    .micro-text-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        transition-property: color, border-color, opacity, transform;
+        transition-duration: 220ms;
+        transition-timing-function: ease-out;
+    }
+
+    .micro-text-link:hover {
+        transform: translateX(3px);
+    }
+
+    .micro-text-link .material-symbols-outlined {
+        transition: transform 220ms ease-out;
+    }
+
+    .micro-text-link:hover .material-symbols-outlined {
+        transform: translateX(4px);
+    }
+
+    .micro-nav-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .micro-nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -0.45rem;
+        height: 1px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 220ms ease-out;
+    }
+
+    .micro-nav-link:hover::after,
+    .micro-nav-link.is-active::after {
+        transform: scaleX(1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .micro-button,
+        .micro-text-link,
+        .micro-text-link .material-symbols-outlined,
+        .micro-nav-link::after {
+            transition-duration: 1ms;
+        }
+
+        .micro-button:hover,
+        .micro-button:active,
+        .micro-text-link:hover,
+        .micro-text-link:hover .material-symbols-outlined {
+            transform: none;
+        }
+    }
+}

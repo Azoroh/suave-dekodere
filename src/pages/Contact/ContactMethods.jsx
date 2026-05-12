@@ -45,14 +45,14 @@ export const ContactMethods = () => {
             {isScroll ? (
               <button
                 onClick={scrollToForm}
-                className="font-label text-xs uppercase tracking-widest text-primary font-bold group-hover:text-secondary transition-colors"
+                className="micro-text-link font-label text-xs uppercase tracking-widest text-primary font-bold group-hover:text-secondary transition-colors"
               >
                 {linkLabel}
               </button>
             ) : (
               <a
                 href={href}
-                className="font-label text-xs uppercase tracking-widest text-primary font-bold group-hover:text-secondary transition-colors"
+                className="micro-text-link font-label text-xs uppercase tracking-widest text-primary font-bold group-hover:text-secondary transition-colors"
               >
                 {linkLabel}
               </a>

@@ -26,7 +26,7 @@ export const CTA = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
           <Link
             to="/contact#inquiry"
-            className="bg-[#2C2C2C] hover:bg-black text-white px-8 py-4 font-label text-xs uppercase tracking-[0.15em] transition-all active:scale-95"
+            className="micro-button bg-[#2C2C2C] hover:bg-black text-white px-8 py-4 font-label text-xs uppercase tracking-[0.15em]"
           >
             Book a Consultation
           </Link>

@@ -31,7 +31,7 @@ export const SmartSystems = () => {
                 Smart control for lighting, access, and everyday comfort, designed to make your space easier to manage.
               </p>
             </div>
-            <a className="font-label text-[10px] uppercase tracking-widest text-on-surface/40 hover:text-secondary transition-colors" href="#">
+            <a className="micro-text-link font-label text-[10px] uppercase tracking-widest text-on-surface/40 hover:text-secondary transition-colors" href="#">
               System Architecture
             </a>
           </div>
