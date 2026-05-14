@@ -4,6 +4,8 @@ import desktopLogo from '../../assets/images/suaveLogo - short.png';
 import dekodereLogo from '../../assets/images/dekodereLogo-initial-black.png';
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-surface-container py-20 px-6 md:px-16">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-none">
@@ -18,7 +20,7 @@ export const Footer = () => {
             Suave Innovations delivers solar, smart systems, security, and electrical solutions for modern homes and businesses in Lagos, with Dékódèrè providing the refined interior finishing layer.
           </p>
           <p className="font-label text-[10px] uppercase tracking-widest text-[#30332f]/40">
-            © 2025 Suave Innovations & Dékódèrè. Lagos, Nigeria.
+            © {currentYear} Suave Innovations & Dékódèrè. Lagos, Nigeria.
           </p>
         </div>
 

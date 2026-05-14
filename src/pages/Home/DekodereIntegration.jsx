@@ -1,4 +1,5 @@
-import dekodereLogo from '../../assets/images/dekodereLogo-split-black.png';
+import dekodereLogo from "../../assets/images/dekodereLogo-split-black.png";
+import dekodereImg from "../../assets/images/dekodere_integration.avif";
 
 export const DekodereIntegration = () => {
   return (
@@ -6,33 +7,42 @@ export const DekodereIntegration = () => {
       <div className="flex flex-col md:flex-row items-center gap-16 md:gap-32">
         <div className="w-full md:w-1/2 relative">
           <div className="absolute -top-10 -left-10 w-40 h-40 bg-tertiary-fixed/20 -z-10"></div>
-          <img 
-            className="w-full aspect-[3/4] object-cover" 
-            alt="warmly lit modern living room with exquisite textures of velvet stone and brass accents" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKdreWA5ABHHifUFVR9GtK1i23agb2JMq5R2IHsCcivkLcSw3rHnZ1Fd7K83CNlsBgy3bQM2KvJOhBL3EP4yiTM55hDYhztpfcDr2JrowbURXvEkGiGSeoa40qgD31RM9KOXkWTTvnFlVTkry1H0OuiA-_RBkXuv5iO9mRhajInH1zJ5o5AJWR0UMgmwvzmE1LaZmDzuqr1R1oKpvwmXIVCIbwmIvt6de9pWYT2UboO8Ex70FNSxEPe3JoycGsnhnpayHZYDJlKqU"
+          <img
+            className="w-full aspect-[3/4] object-cover"
+            alt="warmly lit modern living room with exquisite textures of velvet stone and brass accents"
+            src={dekodereImg}
           />
         </div>
-        
+
         <div className="w-full md:w-1/2">
           <div className="mb-12">
-            <img src={dekodereLogo} alt="Dékódèrè by Suave" className="h-20 w-auto object-contain" />
+            <img
+              src={dekodereLogo}
+              alt="Dékódèrè by Suave"
+              className="h-20 w-auto object-contain"
+            />
           </div>
-          
+
           <h2 className="font-headline text-5xl md:text-6xl font-bold tracking-tighter mb-10 text-on-surface">
-            Atmosphere.<br/>The Final Layer.
+            Atmosphere.
+            <br />
+            The Final Layer.
           </h2>
-          
+
           <p className="font-body text-2xl text-on-surface/80 leading-snug italic mb-10">
-            Once the systems are in place, the space can truly come alive. Dékódèrè brings warmth, lighting, interior calm, and finishing detail to the spaces we help build and power.
+            Once the systems are in place, the space can truly come alive.
+            Dékódèrè brings warmth, lighting, interior calm, and finishing
+            detail to the spaces we help build and power.
           </p>
-          
+
           <p className="font-body text-lg text-on-surface/60 mb-12 max-w-lg">
-            From feature lighting to thoughtful interior touches, we create spaces that feel complete, comfortable, and beautifully resolved.
+            From feature lighting to thoughtful interior touches, we create
+            spaces that feel complete, comfortable, and beautifully resolved.
           </p>
-          
-          <a 
-            href="https://www.instagram.com/dekoderebysuave/" 
-            target="_blank" 
+
+          <a
+            href="https://www.instagram.com/dekoderebysuave/"
+            target="_blank"
             rel="noopener noreferrer"
             className="micro-text-link group flex items-center gap-4 text-tertiary hover:text-on-surface transition-colors"
           >

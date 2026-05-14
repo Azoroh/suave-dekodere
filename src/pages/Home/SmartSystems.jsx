@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../../components/ui/Button";
+import smartHomeImg from "../../assets/images/smarthome.avif";
 
 export const SmartSystems = () => {
   return (
@@ -48,7 +49,7 @@ export const SmartSystems = () => {
             <img
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               alt="luxury home interior with sophisticated tech-integrated security panels and minimalist design"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6RlyfUvXymbs4MNahiNVySaXGZkv4KlZRcQ1vmgungJi1mUiJRMTAkhse9fvOxQmS-G5o9mZQjCDTdGzMUryxWJg6SmDcK2CJIO9aHGUrAkdQndYJmdfdBxEpN5Bba_xjTU3wxfdUeQpSIOexRnGrOootGR1T6QXLaXECeq-Ql2mFPILdwPpVcRNKgQciZF0Dekslsh0BE-C9hgi21W2FALMpNBSECwD3Ze5I8G6760fne75LEUsAnwIzI6Jn-V9mO8gtqiaM07k"
+              src={smartHomeImg}
             />
             <div className="absolute inset-0 bg-on-surface/20 flex flex-col justify-end p-12">
               <h3 className="font-headline text-3xl font-bold text-surface-bright mb-2">

@@ -1,49 +1,50 @@
 import React from "react";
-import solarProject1 from "../../assets/images/solar_project_1.png";
-import solarProject2 from "../../assets/images/solar_project_2.png";
+import movLabImg from "../../assets/images/mov_lab.avif";
+import anambraInstallImg from "../../assets/images/anambra_install.avif";
+import estateInstallImg from "../../assets/images/estate_install.avif";
+import inverterInstallImg from "../../assets/images/inverter_install.avif";
 
 const projects = [
   {
-    title: "Ikoyi Private Residence",
+    title: "Anambra Residential Installation",
     category: "Residential Solar",
-    location: "Ikoyi, Lagos",
-    image: solarProject1,
+    location: "Anambra, Nigeria",
+    image: anambraInstallImg,
     imageClassName: "aspect-[4/5]",
     accentClassName: "bg-secondary/10 text-secondary",
     description:
-      "Solar and backup power integration for a quiet, reliable luxury home with smarter daily energy support.",
+      "A residential solar and backup power installation designed to reduce generator reliance and keep essential home systems running reliably.",
   },
   {
-    title: "Victoria Island Office",
-    category: "Commercial Power",
-    location: "Victoria Island, Lagos",
-    image: solarProject2,
+    title: "The MOV LAB",
+    category: "Interior Finishing",
+    location: "Ikoyi, Lagos",
+    image: movLabImg,
     imageClassName: "aspect-square",
     accentClassName: "bg-on-surface/10 text-on-surface",
     description:
-      "Backup power and electrical infrastructure planned around continuity, clean installation, and business use.",
+      "Warm lighting, mirrored depth, and refined finishing for a calm Pilates studio designed around movement, focus, and spatial ease.",
   },
   {
-    title: "Lekki Smart Home",
-    category: "Smart Systems",
-    location: "Lekki, Lagos",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC6RlyfUvXymbs4MNahiNVySaXGZkv4KlZRcQ1vmgungJi1mUiJRMTAkhse9fvOxQmS-G5o9mZQjCDTdGzMUryxWJg6SmDcK2CJIO9aHGUrAkdQndYJmdfdBxEpN5Bba_xjTU3wxfdUeQpSIOexRnGrOootGR1T6QXLaXECeq-Ql2mFPILdwPpVcRNKgQciZF0Dekslsh0BE-C9hgi21W2FALMpNBSECwD3Ze5I8G6760fne75LEUsAnwIzI6Jn-V9mO8gtqiaM07k",
-    imageClassName: "aspect-square",
-    accentClassName: "bg-secondary/10 text-secondary",
-    description:
-      "Integrated lighting, access, CCTV, and control systems designed to make a modern home easier to manage.",
-  },
-  {
-    title: "Dékódèrè Living Suite",
-    category: "Interior Finishing",
+    title: "Inverter & Battery Backup Installation",
+    category: "Backup Power",
     location: "Lagos, Nigeria",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAKdreWA5ABHHifUFVR9GtK1i23agb2JMq5R2IHsCcivkLcSw3rHnZ1Fd7K83CNlsBgy3bQM2KvJOhBL3EP4yiTM55hDYhztpfcDr2JrowbURXvEkGiGSeoa40qgD31RM9KOXkWTTvnFlVTkry1H0OuiA-_RBkXuv5iO9mRhajInH1zJ5o5AJWR0UMgmwvzmE1LaZmDzuqr1R1oKpvwmXIVCIbwmIvt6de9pWYT2UboO8Ex70FNSxEPe3JoycGsnhnpayHZYDJlKqU",
+    image: inverterInstallImg,
     imageClassName: "aspect-[4/5]",
     accentClassName: "bg-tertiary/10 text-tertiary",
     description:
-      "Warm lighting, soft texture, and final interior details layered over the technical systems beneath.",
+      "An inverter and tubular battery backup setup designed to keep essential systems running during power interruptions.",
+  },
+  {
+    title: "Estate Rooftop Solar Installation",
+    // category: "Smart Systems",
+    category: "Residential Solar",
+    location: "Lagos, Nigeria",
+    image: estateInstallImg,
+    imageClassName: "aspect-square",
+    accentClassName: "bg-secondary/10 text-secondary",
+    description:
+      "A clean rooftop solar installation for a modern estate residence, designed to support dependable energy use.",
   },
 ];
 
