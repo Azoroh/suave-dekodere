@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import solarPanelImg from "../../assets/images/reliable_energy.avif";
 
 export const SolarEnergy = () => {
   return (
@@ -12,47 +14,60 @@ export const SolarEnergy = () => {
             Reliable Energy for Homes and Businesses
           </h2>
           <p className="font-body text-lg text-on-surface/80 leading-relaxed mb-8">
-            Power supply should not interrupt how you live or work. We design and install solar and backup power systems that help homes, offices, and commercial properties stay efficient, secure, and prepared for everyday demands in Nigeria.
+            Power supply should not interrupt how you live or work. We design
+            and install solar and backup power systems that help homes, offices,
+            and commercial properties stay efficient, secure, and prepared for
+            everyday demands in Nigeria.
           </p>
           <ul className="space-y-6 mb-12">
             <li className="flex items-start gap-4">
-              <span className="material-symbols-outlined text-secondary">energy_savings_leaf</span>
+              <span className="material-symbols-outlined text-secondary">
+                energy_savings_leaf
+              </span>
               <div>
                 <span className="font-headline font-bold text-on-surface block">
                   Solar and backup systems tailored to your property
                 </span>
                 <p className="font-body text-on-surface/60 italic">
-                  Custom engineering ensures the right capacity for your specific energy load requirements.
+                  Custom engineering ensures the right capacity for your
+                  specific energy load requirements.
                 </p>
               </div>
             </li>
             <li className="flex items-start gap-4">
-              <span className="material-symbols-outlined text-secondary">shield_with_heart</span>
+              <span className="material-symbols-outlined text-secondary">
+                shield_with_heart
+              </span>
               <div>
                 <span className="font-headline font-bold text-on-surface block">
                   Reliable performance for daily living and business continuity
                 </span>
                 <p className="font-body text-on-surface/60 italic">
-                  Seamless transitions and durable components designed for the local environment.
+                  Seamless transitions and durable components designed for the
+                  local environment.
                 </p>
               </div>
             </li>
           </ul>
-          <a className="micro-text-link font-body text-secondary italic text-lg underline editorial-underline hover:text-on-surface transition-colors" href="#">
+          <Link
+            className="micro-text-link font-body text-secondary italic text-lg underline editorial-underline hover:text-on-surface transition-colors"
+            to="/solar#projects"
+          >
             Explore Solar Solutions
-          </a>
+          </Link>
         </div>
-        
+
         <div className="md:col-span-7 order-1 md:order-2">
           <div className="relative aspect-[4/5] md:aspect-square overflow-hidden">
-            <img 
-              className="w-full h-full object-cover" 
-              alt="high-end modern solar panel installation on a sleek architectural roof with blue sky reflection" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy66928IgQrHBJ4D3OvM_9LaEGGuODg24hq3F9zy5W0BWUrwhC0tWBoUrOGlu_bU3TPCrbLxoUa0iSR-Gos4bw-_Y0ctU5gBAjPU9LrimhqgaFKLaSbrhrUzZscEc4RpY8x_vnI6qbDIt0lpDTgMmO_wrC72CUtOR2kCA1R1DpdIIufHTKkNuLYVvRbDRE8e2sso6YzMSkDXUs7WBT9mScK61tJFUvu5tLsXKLIAxTNiZbnU9iT82t6OTiISt6P1khkXxM4_JAOYg"
+            <img
+              className="w-full h-full object-cover"
+              alt="high-end modern solar panel installation on a sleek architectural roof with blue sky reflection"
+              src={solarPanelImg}
             />
             <div className="absolute bottom-0 left-0 bg-surface-bright p-8 max-w-sm hidden md:block">
               <p className="font-body italic text-on-surface/70">
-                "Practical energy systems designed for modern living and business use"
+                "Practical energy systems designed for modern living and
+                business use"
               </p>
             </div>
           </div>

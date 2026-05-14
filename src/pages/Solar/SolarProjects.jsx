@@ -44,7 +44,7 @@ export const SolarProjects = () => {
   const displayedProjects = isExpanded ? allProjects : allProjects.slice(0, 2);
 
   return (
-    <section className="py-24 md:py-32 px-6 md:px-16 bg-surface">
+    <section id="projects" className="py-24 md:py-32 px-6 md:px-16 bg-surface">
       <div className="max-w-[1440px] mx-auto">
         <div className="mb-20">
           <span className="font-label text-xs uppercase tracking-[0.2em] text-secondary mb-4 block">

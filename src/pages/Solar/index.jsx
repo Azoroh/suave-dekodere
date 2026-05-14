@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ScrollReveal } from '../../components/ui/ScrollReveal';
 import { Hero } from './Hero';
 import { Overview } from './Overview';
@@ -11,6 +12,19 @@ import { Trust } from './Trust';
 import { CTA } from './CTA';
 
 const Solar = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash === '#projects') {
+      const element = document.getElementById('projects');
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [hash]);
+
   return (
     <>
       <Hero />
