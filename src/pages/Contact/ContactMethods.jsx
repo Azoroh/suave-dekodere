@@ -19,8 +19,8 @@ const methods = [
     icon: 'chat_bubble_outline',
     title: 'Call or WhatsApp',
     body: 'Speak to our team directly for faster inquiries and project discussions.',
-    linkLabel: '+234 000 000 0000',
-    href: 'https://wa.me/2340000000000',
+    linkLabel: '+234 907 425 2223',
+    href: 'https://wa.me/2349074252223',
     bg: 'bg-surface-container',
   },
   {

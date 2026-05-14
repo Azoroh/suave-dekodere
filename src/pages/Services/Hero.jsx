@@ -24,7 +24,7 @@ export const Hero = () => {
               Book a Consultation
             </Link>
              <a
-              href="https://wa.me/2340000000000"
+              href="https://wa.me/2349074252223"
               target="_blank"
               rel="noopener noreferrer"
               className="micro-text-link font-body italic text-tertiary text-lg border-b border-tertiary/30 pb-1 hover:border-tertiary transition-all"

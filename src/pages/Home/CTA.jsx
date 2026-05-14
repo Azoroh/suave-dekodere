@@ -21,11 +21,11 @@ export const CTA = () => {
               Book a Consultation
             </Button>
           </Link>
-          <Link to="/contact">
+          <a href="tel:+2349074252223">
             <Button variant="outline" size="xl">
-              Request a Callback
+              Call 09074252223
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>
