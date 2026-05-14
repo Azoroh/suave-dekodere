@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import movLabImg from "../../assets/images/mov_lab.avif";
 import anambraInstallImg from "../../assets/images/anambra_install.avif";
 import estateInstallImg from "../../assets/images/estate_install.avif";
@@ -109,14 +110,12 @@ export const FeaturedProjects = () => {
         </div>
 
         <div className="mt-24 flex justify-center">
-          <a
-            href="https://www.instagram.com/suave_innovations/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/solar#projects"
             className="micro-button border border-outline-variant/30 text-on-surface hover:bg-on-surface hover:text-surface-bright px-12 py-5 font-label text-xs uppercase tracking-widest"
           >
             View More Work
-          </a>
+          </Link>
         </div>
       </div>
     </section>
