@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from '../../components/ui/Button';
+import React from "react";
+import { Button } from "../../components/ui/Button";
 
 export const SmartSystems = () => {
   return (
@@ -15,7 +15,8 @@ export const SmartSystems = () => {
             </h2>
           </div>
           <p className="font-body text-xl text-on-surface/60 italic max-w-sm">
-            We bring power, automation, security, and convenience together in one coordinated system for modern spaces.
+            We bring power, automation, security, and convenience together in
+            one coordinated system for modern spaces.
           </p>
         </div>
 
@@ -26,21 +27,27 @@ export const SmartSystems = () => {
               <span className="material-symbols-outlined text-3xl mb-8 block text-on-surface">
                 settings_input_component
               </span>
-              <h3 className="font-headline text-2xl font-bold mb-4">Integrated Automation</h3>
+              <h3 className="font-headline text-2xl font-bold mb-4">
+                Integrated Automation
+              </h3>
               <p className="font-body text-on-surface/70">
-                Smart control for lighting, access, and everyday comfort, designed to make your space easier to manage.
+                Smart control for lighting, access, and everyday comfort,
+                designed to make your space easier to manage.
               </p>
             </div>
-            <a className="micro-text-link font-label text-[10px] uppercase tracking-widest text-on-surface/40 hover:text-secondary transition-colors" href="#">
+            <a
+              className="micro-text-link font-label text-[10px] uppercase tracking-widest text-on-surface/40 hover:text-secondary transition-colors"
+              href="#"
+            >
               System Architecture
             </a>
           </div>
 
           {/* Security Card (Image) */}
           <div className="md:col-span-2 relative overflow-hidden group">
-            <img 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-              alt="luxury home interior with sophisticated tech-integrated security panels and minimalist design" 
+            <img
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="luxury home interior with sophisticated tech-integrated security panels and minimalist design"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6RlyfUvXymbs4MNahiNVySaXGZkv4KlZRcQ1vmgungJi1mUiJRMTAkhse9fvOxQmS-G5o9mZQjCDTdGzMUryxWJg6SmDcK2CJIO9aHGUrAkdQndYJmdfdBxEpN5Bba_xjTU3wxfdUeQpSIOexRnGrOootGR1T6QXLaXECeq-Ql2mFPILdwPpVcRNKgQciZF0Dekslsh0BE-C9hgi21W2FALMpNBSECwD3Ze5I8G6760fne75LEUsAnwIzI6Jn-V9mO8gtqiaM07k"
             />
             <div className="absolute inset-0 bg-on-surface/20 flex flex-col justify-end p-12">
@@ -48,7 +55,8 @@ export const SmartSystems = () => {
                 Advanced Security & CCTV
               </h3>
               <p className="font-body text-surface-bright/80 italic">
-                Protection and visibility for homes, offices, and commercial spaces.
+                Protection and visibility for homes, offices, and commercial
+                spaces.
               </p>
             </div>
           </div>
@@ -56,9 +64,12 @@ export const SmartSystems = () => {
           {/* Electrical Card (Horizontal) */}
           <div className="micro-service-card md:col-span-3 bg-secondary text-surface-bright p-12 flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="max-w-xl">
-              <h3 className="font-headline text-3xl font-bold mb-6">Electrical Engineering</h3>
+              <h3 className="font-headline text-3xl font-bold mb-6">
+                Electrical Engineering
+              </h3>
               <p className="font-body text-xl text-surface-bright/70 italic">
-                Professional electrical design and installation for high-performance residential and commercial projects.
+                Professional electrical design and installation for
+                high-performance residential and commercial projects.
               </p>
             </div>
             <div className="w-full md:w-auto">
