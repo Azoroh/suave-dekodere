@@ -74,9 +74,15 @@ export const SmartSystems = () => {
               </p>
             </div>
             <div className="w-full md:w-auto">
-              <Button variant="secondary" className="w-full md:w-auto">
-                Talk to Our Team
-              </Button>
+              <a
+                href="https://wa.me/2349074252223"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="secondary" className="w-full md:w-auto">
+                  Talk to Our Team
+                </Button>
+              </a>
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@ export const Hero = () => {
               Book a Consultation
             </Button>
           </Link>
-          <Link to="/services">
+          <Link to="/services#technical-excellence">
             <Button variant="outline" size="lg">
               Explore Our Services
             </Button>

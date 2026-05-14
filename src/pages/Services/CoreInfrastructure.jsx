@@ -2,7 +2,7 @@ import React from 'react';
 
 export const CoreInfrastructure = () => {
   return (
-    <section className="bg-surface-container-low py-32 px-6 md:px-16">
+    <section id="technical-excellence" className="bg-surface-container-low py-32 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-24">
           <div className="max-w-2xl">
