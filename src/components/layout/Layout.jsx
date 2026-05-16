@@ -5,12 +5,37 @@ import { Footer } from './Footer';
 
 export const Layout = ({ children, isGlassNav = true }) => {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
+  const [hasMobileScrollDepth, setHasMobileScrollDepth] = useState(false);
+  const [isPageEndVisible, setIsPageEndVisible] = useState(false);
   const mainRef = useRef(null);
   const footerRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
-    setShowBackToTop(false);
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    const handleViewportChange = () => setIsMobileViewport(mediaQuery.matches);
+
+    handleViewportChange();
+    mediaQuery.addEventListener('change', handleViewportChange);
+
+    return () => mediaQuery.removeEventListener('change', handleViewportChange);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const threshold = Math.min(window.innerHeight * 0.85, 640);
+      setHasMobileScrollDepth(window.scrollY > threshold);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsPageEndVisible(false);
     let observer;
 
     const setupObserver = window.setTimeout(() => {
@@ -31,7 +56,7 @@ export const Layout = ({ children, isGlassNav = true }) => {
             }
           });
 
-          setShowBackToTop(visibleTargets.size > 0);
+          setIsPageEndVisible(visibleTargets.size > 0);
         },
         { threshold: 0.12 }
       );
@@ -44,6 +69,10 @@ export const Layout = ({ children, isGlassNav = true }) => {
       observer?.disconnect();
     };
   }, [location.pathname]);
+
+  useEffect(() => {
+    setShowBackToTop(isMobileViewport ? hasMobileScrollDepth : isPageEndVisible);
+  }, [hasMobileScrollDepth, isMobileViewport, isPageEndVisible]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
