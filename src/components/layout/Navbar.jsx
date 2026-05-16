@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../ui/Button';
 import desktopLogo from '../../assets/images/suaveLogo.png';
@@ -13,10 +13,24 @@ const navLinks = [
 
 export const Navbar = ({ isGlass = true }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 96);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className={`fixed top-0 z-50 w-full px-6 md:px-16 py-6 transition-colors duration-300 ${
+    <nav className={`fixed top-0 z-50 w-full px-6 md:px-16 transition-all duration-300 ${
+      isScrolled ? 'py-4 md:py-4' : 'py-6'
+    } ${
       isGlass && !isMobileMenuOpen ? 'glass-nav' : 'bg-surface'
     }`}>
       <div className="flex justify-between items-center">
@@ -25,8 +39,8 @@ export const Navbar = ({ isGlass = true }) => {
           className="flex items-center" 
           onClick={() => window.scrollTo(0, 0)}
         >
-          <img src={desktopLogo} alt="Suave Innovations" loading="eager" decoding="async" className="hidden md:block h-12 w-auto object-contain" />
-          <img src={mobileLogo} alt="Suave Innovations" loading="eager" decoding="async" className="block md:hidden h-14 w-auto object-contain" />
+          <img src={desktopLogo} alt="Suave Innovations" loading="eager" decoding="async" className={`hidden md:block w-auto object-contain transition-all duration-300 ${isScrolled ? 'h-10' : 'h-12'}`} />
+          <img src={mobileLogo} alt="Suave Innovations" loading="eager" decoding="async" className={`block md:hidden w-auto object-contain transition-all duration-300 ${isScrolled ? 'h-12' : 'h-14'}`} />
         </Link>
         
         {/* Desktop Menu */}
