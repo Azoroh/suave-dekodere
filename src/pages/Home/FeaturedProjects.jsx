@@ -26,27 +26,6 @@ const projects = [
     description:
       "Warm lighting, mirrored depth, and refined finishing for a calm Pilates studio designed around movement, focus, and spatial ease.",
   },
-  {
-    title: "Inverter & Battery Backup Installation",
-    category: "Backup Power",
-    location: "Lagos, Nigeria",
-    image: inverterInstallImg,
-    imageClassName: "aspect-[4/5]",
-    accentClassName: "bg-tertiary/10 text-tertiary",
-    description:
-      "An inverter and tubular battery backup setup designed to keep essential systems running during power interruptions.",
-  },
-  {
-    title: "Estate Rooftop Solar Installation",
-    // category: "Smart Systems",
-    category: "Residential Solar",
-    location: "Lagos, Nigeria",
-    image: estateInstallImg,
-    imageClassName: "aspect-square",
-    accentClassName: "bg-secondary/10 text-secondary",
-    description:
-      "A clean rooftop solar installation for a modern estate residence, designed to support dependable energy use.",
-  },
 ];
 
 export const FeaturedProjects = () => {
