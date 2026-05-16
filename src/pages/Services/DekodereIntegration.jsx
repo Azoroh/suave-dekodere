@@ -1,4 +1,6 @@
-import React from 'react';
+import React from "react";
+import deko1 from "../../assets/images/deko_poster1.avif";
+import deko2 from "../../assets/images/deko2.avif";
 
 export const DekodereIntegration = () => {
   return (
@@ -14,24 +16,33 @@ export const DekodereIntegration = () => {
               Interior Calm, Lighting, and Finishing
             </h2>
             <div className="font-body text-xl italic text-on-surface mb-12 leading-relaxed">
-              "Beyond technical systems, we help shape the final experience of a space through interior finishing, feature lighting, and refined design detail. Dékódèrè brings warmth, mood, and visual balance to the environments we help build and power."
+              "Beyond technical systems, we help shape the final experience of a
+              space through interior finishing, feature lighting, and refined
+              design detail. Dékódèrè brings warmth, mood, and visual balance to
+              the environments we help build and power."
             </div>
-            
+
             <ul className="space-y-6">
               <li className="flex items-center gap-4 group cursor-default">
-                <span className="material-symbols-outlined text-tertiary">architecture</span>
+                <span className="material-symbols-outlined text-tertiary">
+                  architecture
+                </span>
                 <span className="font-headline font-semibold text-lg border-b border-transparent group-hover:border-tertiary/30 transition-all">
                   Interior Finishing
                 </span>
               </li>
               <li className="flex items-center gap-4 group cursor-default">
-                <span className="material-symbols-outlined text-tertiary">wb_incandescent</span>
+                <span className="material-symbols-outlined text-tertiary">
+                  wb_incandescent
+                </span>
                 <span className="font-headline font-semibold text-lg border-b border-transparent group-hover:border-tertiary/30 transition-all">
                   Lighting Design
                 </span>
               </li>
               <li className="flex items-center gap-4 group cursor-default">
-                <span className="material-symbols-outlined text-tertiary">format_paint</span>
+                <span className="material-symbols-outlined text-tertiary">
+                  format_paint
+                </span>
                 <span className="font-headline font-semibold text-lg border-b border-transparent group-hover:border-tertiary/30 transition-all">
                   Decorative Styling
                 </span>
@@ -39,20 +50,20 @@ export const DekodereIntegration = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="grid grid-cols-2 gap-6 items-start">
           <div className="aspect-[3/4] overflow-hidden bg-surface-container translate-y-8 md:translate-y-12">
-            <img 
-              className="w-full h-full object-cover" 
-              alt="Refined interior detail featuring a brass floor lamp" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYACvOZ1fctU0TCVJzUYKP28OJrWeKMcw30N30NxmGFEEWRiXXEdWGBcNiQTZIvbLka-HC7obi2GIUF-K1DQJXELpcQ5R2J41T063SQIL3NroRnEP0moqDkdqohGqicMHvdeaHYFn06U0qwZ_M93bQCobeOxCEEq5ctqewM-Ou4K009bSzG8sbA-p_dufebvtcNbdobsFvICNaq2DR5P8BoZJ88XljqG9hATgws8HGrR6HlWtDnKy4uY9AFq_7jI4MzUm7CfZC0jY" 
+            <img
+              className="w-full h-full object-cover"
+              alt="Refined interior detail featuring a brass floor lamp"
+              src={deko1}
             />
           </div>
           <div className="aspect-[3/4] overflow-hidden bg-surface-container">
-            <img 
-              className="w-full h-full object-cover" 
-              alt="Modern architectural lighting detail" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOHDuNikSjJ9wD5PqO_XRtg7DI9KEnFqAzqG90zBNhK2QRVG3SEaMQfykSKQ-MXhkRwSrjUhsbk0j0Jw1cs2F5asoko4ThvhhTXMDY8NFSWiueZJh--EtV1RHvXeWWLuIcQoiIKf669TJ-IsEuOSXrIc8f6EtLnWvJUyyvc9QK2I5TS9A8KXYq9enOjnsektKQAIb8g85ZeUizWHzn_Kc0uqt7ebABP79fHHOdLCUmVQ195WlqlWee2BkAWzn3BGSczYQkSvDQsSs" 
+            <img
+              className="w-full h-full object-cover"
+              alt="Modern architectural lighting detail"
+              src={deko2}
             />
           </div>
         </div>

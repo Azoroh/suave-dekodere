@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import servicesImg from "../../assets/images/suave_services.webp";
 
 export const Hero = () => {
   return (
@@ -11,10 +12,13 @@ export const Hero = () => {
             What we do
           </span>
           <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight text-on-surface mb-8 leading-[1.1]">
-            Services for Modern <br />Homes and Businesses
+            Services for Modern <br />
+            Homes and Businesses
           </h1>
           <p className="font-body text-xl md:text-2xl text-on-surface-variant max-w-xl mb-12 leading-relaxed">
-            From solar installations and backup power to smart systems, security, electrical work, and refined interior finishing, we help create spaces that work better and feel complete.
+            From solar installations and backup power to smart systems,
+            security, electrical work, and refined interior finishing, we help
+            create spaces that work better and feel complete.
           </p>
           <div className="flex flex-wrap gap-6 items-center">
             <Link
@@ -23,7 +27,7 @@ export const Hero = () => {
             >
               Book a Consultation
             </Link>
-             <a
+            <a
               href="https://wa.me/2349074252223"
               target="_blank"
               rel="noopener noreferrer"
@@ -31,7 +35,6 @@ export const Hero = () => {
             >
               Call or WhatsApp
             </a>
-            
           </div>
         </div>
 
@@ -41,10 +44,9 @@ export const Hero = () => {
             <img
               className="w-full h-full object-cover grayscale-[20%] contrast-[1.1]"
               alt="Modern Architectural Interior"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLTPghdhZL2fL7xclLrZM3XNtX6FpO80jfXQ4YmmBH2bf--A-cKZs1dYDrb-uJg5g2rRSDcl74O25YSvvI65llkdi8jyoG3xxXB56y89TuCuYVfTpm11357UyLsVzzWZvZT0rfxDNviOJaOzGhuBmaZJdrA_tP0od2aEBv3ibQ_vVcgZOMNr7USJL5njAtSZlY66OwB26w_T0mE1gRM2XIqMoMKcRIG0O8IhSdZZ_BcZ0k0d7CJB35_S-zYyuyn_5uFjIGYxTCk-E"
+              src={servicesImg}
             />
           </div>
-          <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-tertiary-fixed hidden md:block z-0" />
         </div>
       </div>
     </header>

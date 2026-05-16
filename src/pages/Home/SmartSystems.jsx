@@ -38,9 +38,11 @@ export const SmartSystems = () => {
             </div>
             <a
               className="micro-text-link font-label text-[10px] uppercase tracking-widest text-on-surface/40 hover:text-secondary transition-colors"
-              href="#"
+              href="https://wa.me/2349074252223"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              System Architecture
+              Discuss Your Setup
             </a>
           </div>
 
