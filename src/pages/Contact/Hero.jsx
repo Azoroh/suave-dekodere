@@ -46,6 +46,9 @@ export const Hero = () => {
         <div className="md:col-span-5 h-[500px] overflow-hidden bg-surface-container">
           <img
             className="w-full h-full object-cover md:grayscale hover:grayscale-0 transition-all duration-700"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
             alt="Minimalist architectural interior with soft natural light"
             src={contactHeroImg}
           />

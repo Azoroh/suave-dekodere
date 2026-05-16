@@ -8,6 +8,8 @@ export const CTA = () => {
       <div className="absolute inset-0 opacity-10">
         <img
           className="w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
           alt="Abstract solar cell grid texture"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGkA50HS1xtfx-ZFjBN5rW4nEqaYimsLRyIe9ZOW2r8vPM8ruh5b_R2mLPRjfd8crHusmo8HV-dk6Ot5x-7wzh5bP1RZU4ZUDkF1aEk_1rsilYE_w6mq0cNQi4Xy96N4Z8I95Ec0AvuPnZTJWislGz_Lpw_-SNZUWHJHlMI_p25S1H72PbFZxaLfRhiV5xo9JJ13rj8LAHM51KyeKZ7h-ZGRisgg_tjtGX55w_dBQWiU0388oAFVqQiusPC_wfuRcPjmIkcJ5L4Rs"
         />

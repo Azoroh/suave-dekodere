@@ -12,6 +12,8 @@ export const Leadership = () => {
               <img
                 src={founderImg}
                 alt="Suave Innovations Founder"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale-0 lg:grayscale lg:group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-105 lg:group-hover:scale-100"
               />
             </div>

@@ -43,6 +43,9 @@ export const Hero = () => {
           <div className="aspect-[4/5] bg-surface-container relative overflow-hidden">
             <img
               className="w-full h-full object-cover grayscale-[20%] contrast-[1.1]"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
               alt="Modern Architectural Interior"
               src={servicesImg}
             />

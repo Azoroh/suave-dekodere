@@ -77,6 +77,8 @@ export const FeaturedProjects = () => {
               <div className="micro-project-image mb-8">
                 <img
                   className={`w-full ${project.imageClassName} object-cover`}
+                  loading="lazy"
+                  decoding="async"
                   alt={`${project.category} project at ${project.location}`}
                   src={project.image}
                 />

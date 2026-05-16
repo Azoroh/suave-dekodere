@@ -68,6 +68,8 @@ export const SolarProjects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover grayscale-0 lg:grayscale-[30%] lg:group-hover:grayscale-0"
                 />
                 <div className="absolute top-6 left-6 z-20">

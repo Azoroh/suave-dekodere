@@ -12,9 +12,9 @@ export const Footer = () => {
         
         <div className="col-span-1 md:col-span-1">
           <div className="flex items-center gap-4 mb-6">
-            <img src={desktopLogo} alt="Suave Innovations" className="h-12 w-auto object-contain" />
+            <img src={desktopLogo} alt="Suave Innovations" loading="lazy" decoding="async" className="h-12 w-auto object-contain" />
             <span className="text-outline-variant/30 text-2xl font-light">|</span>
-            <img src={dekodereLogo} alt="Dékódèrè" className="h-8 w-auto object-contain" />
+            <img src={dekodereLogo} alt="Dékódèrè" loading="lazy" decoding="async" className="h-8 w-auto object-contain" />
           </div>
           <p className="font-body text-sm text-[#30332f]/60 mb-8 italic leading-relaxed">
             Suave Innovations delivers solar, smart systems, security, and electrical solutions for modern homes and businesses in Lagos, with Dékódèrè providing the refined interior finishing layer.

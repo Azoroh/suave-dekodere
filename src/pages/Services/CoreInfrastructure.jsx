@@ -29,6 +29,8 @@ export const CoreInfrastructure = () => {
             <div className="mb-8 overflow-hidden aspect-[4/5] bg-surface-container">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
                 alt="Contemporary solar panel installation"
                 src={solarPanelImg}
               />
@@ -50,6 +52,8 @@ export const CoreInfrastructure = () => {
             <div className="mb-8 overflow-hidden aspect-[4/5] bg-surface-container">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
                 alt="Industrial power backup systems"
                 src={inverterInstallImg}
               />
@@ -71,6 +75,8 @@ export const CoreInfrastructure = () => {
             <div className="mb-8 overflow-hidden aspect-[4/5] bg-surface-container">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
                 alt="High-end smart home touch interface"
                 src={smartHomeImg}
               />
@@ -92,6 +98,8 @@ export const CoreInfrastructure = () => {
             <div className="mb-8 overflow-hidden aspect-[16/9] w-full bg-surface-container">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
                 alt="Minimalist modern security camera"
                 src={cctvImg}
               />
@@ -113,6 +121,8 @@ export const CoreInfrastructure = () => {
             <div className="mb-8 overflow-hidden aspect-[21/9] w-full bg-surface-container">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
                 alt="Close-up of professional electrical blueprint and tools"
                 src={electricalImg}
               />

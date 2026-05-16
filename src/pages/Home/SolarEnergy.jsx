@@ -61,6 +61,8 @@ export const SolarEnergy = () => {
           <div className="relative aspect-[4/5] md:aspect-square overflow-hidden">
             <img
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
               alt="high-end modern solar panel installation on a sleek architectural roof with blue sky reflection"
               src={solarPanelImg}
             />

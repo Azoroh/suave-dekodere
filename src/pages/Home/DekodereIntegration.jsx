@@ -9,6 +9,8 @@ export const DekodereIntegration = () => {
           <div className="absolute -top-10 -left-10 w-40 h-40 bg-tertiary-fixed/20 -z-10"></div>
           <img
             className="w-full aspect-[3/4] object-cover"
+            loading="lazy"
+            decoding="async"
             alt="warmly lit modern living room with exquisite textures of velvet stone and brass accents"
             src={dekodereImg}
           />
@@ -19,6 +21,8 @@ export const DekodereIntegration = () => {
             <img
               src={dekodereLogo}
               alt="Dékódèrè by Suave"
+              loading="lazy"
+              decoding="async"
               className="h-20 w-auto object-contain"
             />
           </div>

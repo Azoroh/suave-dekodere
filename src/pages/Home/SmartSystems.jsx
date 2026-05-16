@@ -50,6 +50,8 @@ export const SmartSystems = () => {
           <div className="md:col-span-2 relative overflow-hidden group">
             <img
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
               alt="luxury home interior with sophisticated tech-integrated security panels and minimalist design"
               src={smartHomeImg}
             />

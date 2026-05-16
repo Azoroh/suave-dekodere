@@ -8,6 +8,8 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           className="w-full h-full object-cover grayscale-[20%] brightness-75"
+          loading="eager"
+          decoding="async"
           fetchPriority="high"
           alt="luxury modern architectural villa exterior at dusk with warm interior lighting and clean minimalist lines"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTO4fX9XTHQS5mrplo3pWkyYfK2MzyVUUAj8MmKhX8u9i2q3E33hMS69-KEKwM94Hb9CKgFzNnIvN9Rat2UD-V_6zmPByPAV94CmSj0BpJwmWf0nLLoDgXLC7fA50YD0Apr6Ve4BZYba4NzMFB-dL3hchmX_Fu76U7Uzv--kIN14e7XnCgsQs-TJfmf5faGQQuA7GmS7vzyhHHCnBiasPBvxpyreyElm9XoJK3okyx2J2xWdCLXQthztG6BvQ6Erwq7MFzRpX82dA"

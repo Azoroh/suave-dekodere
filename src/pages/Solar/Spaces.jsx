@@ -12,6 +12,8 @@ export const Spaces = () => {
             <div className="aspect-[16/9] bg-surface-container-high overflow-hidden mb-8">
               <img
                 className="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
                 alt="Luxury contemporary residence with rooftop solar panels"
                 src={residentialImg}
               />
@@ -30,6 +32,8 @@ export const Spaces = () => {
             <div className="aspect-[16/9] bg-surface-container-high overflow-hidden mb-8">
               <img
                 className="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
                 alt="Modern high-end office lobby with architectural lighting"
                 src={commercialImg}
               />

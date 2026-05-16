@@ -55,6 +55,8 @@ export const DekodereIntegration = () => {
           <div className="aspect-[3/4] overflow-hidden bg-surface-container translate-y-8 md:translate-y-12">
             <img
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
               alt="Refined interior detail featuring a brass floor lamp"
               src={deko1}
             />
@@ -62,6 +64,8 @@ export const DekodereIntegration = () => {
           <div className="aspect-[3/4] overflow-hidden bg-surface-container">
             <img
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
               alt="Modern architectural lighting detail"
               src={deko2}
             />

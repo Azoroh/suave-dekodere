@@ -25,8 +25,8 @@ export const Navbar = ({ isGlass = true }) => {
           className="flex items-center" 
           onClick={() => window.scrollTo(0, 0)}
         >
-          <img src={desktopLogo} alt="Suave Innovations" className="hidden md:block h-12 w-auto object-contain" />
-          <img src={mobileLogo} alt="Suave Innovations" className="block md:hidden h-14 w-auto object-contain" />
+          <img src={desktopLogo} alt="Suave Innovations" loading="eager" decoding="async" className="hidden md:block h-12 w-auto object-contain" />
+          <img src={mobileLogo} alt="Suave Innovations" loading="eager" decoding="async" className="block md:hidden h-14 w-auto object-contain" />
         </Link>
         
         {/* Desktop Menu */}
