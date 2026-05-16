@@ -27,8 +27,8 @@ const methods = [
     icon: 'mail_outline',
     title: 'Email Us',
     body: 'Send project details, questions, or service requests and we will respond as soon as possible.',
-    linkLabel: 'hello@suave.com',
-    href: 'mailto:hello@suave.com',
+    linkLabel: 'robinsonsuave@gmail.com',
+    href: 'mailto:robinsonsuave@gmail.com',
     bg: 'bg-surface-container-high',
   },
 ];

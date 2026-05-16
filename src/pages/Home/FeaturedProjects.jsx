@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import movLabImg from "../../assets/images/mov_lab.avif";
 import anambraInstallImg from "../../assets/images/anambra_install.avif";
-import estateInstallImg from "../../assets/images/estate_install.avif";
-import inverterInstallImg from "../../assets/images/inverter_install.avif";
 
 const projects = [
   {

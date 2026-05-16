@@ -7,7 +7,7 @@ import ketuInstallImg from "../../assets/images/ketu_install.avif";
 
 const allProjects = [
   {
-    id: crypto.randomUUID(),
+    id: "anambra-residential-installation",
     title: "Anambra Residential Installation",
     type: "Residential Solar",
     location: "Anambra, Nigeria",
@@ -16,7 +16,7 @@ const allProjects = [
       "A residential solar and backup power installation designed to reduce generator reliance and keep essential home systems running reliably.",
   },
   {
-    id: crypto.randomUUID(),
+    id: "inverter-battery-backup-installation",
     title: "Inverter & Battery Backup Installation",
     type: "Backup Power",
     location: "Lagos, Nigeria",
@@ -25,7 +25,7 @@ const allProjects = [
       "An inverter and tubular battery backup setup designed to keep essential systems running during power interruptions.",
   },
   {
-    id: crypto.randomUUID(),
+    id: "estate-rooftop-solar-installation",
     title: "Estate Rooftop Solar Installation",
     type: "Residential Solar",
     location: "Lagos, Nigeria",
@@ -34,7 +34,7 @@ const allProjects = [
       "A clean rooftop solar installation for a modern estate residence, designed to support dependable energy use.",
   },
   {
-    id: crypto.randomUUID(),
+    id: "ketu-rooftop-solar-installation",
     title: "Ketu Rooftop Solar Installation",
     type: "Residential Solar",
     location: "Ketu, Lagos",

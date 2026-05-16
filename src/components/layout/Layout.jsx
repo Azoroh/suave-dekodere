@@ -4,7 +4,6 @@ import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 
 export const Layout = ({ children, isGlassNav = true }) => {
-  const [showBackToTop, setShowBackToTop] = useState(false);
   const [isMobileViewport, setIsMobileViewport] = useState(false);
   const [hasMobileScrollDepth, setHasMobileScrollDepth] = useState(false);
   const [isPageEndVisible, setIsPageEndVisible] = useState(false);
@@ -35,10 +34,11 @@ export const Layout = ({ children, isGlassNav = true }) => {
   }, []);
 
   useEffect(() => {
-    setIsPageEndVisible(false);
     let observer;
 
     const setupObserver = window.setTimeout(() => {
+      setIsPageEndVisible(false);
+
       const lastMainSection = mainRef.current?.lastElementChild;
       const footer = footerRef.current;
       const targets = [lastMainSection, footer].filter(Boolean);
@@ -70,9 +70,9 @@ export const Layout = ({ children, isGlassNav = true }) => {
     };
   }, [location.pathname]);
 
-  useEffect(() => {
-    setShowBackToTop(isMobileViewport ? hasMobileScrollDepth : isPageEndVisible);
-  }, [hasMobileScrollDepth, isMobileViewport, isPageEndVisible]);
+  const showBackToTop = isMobileViewport
+    ? hasMobileScrollDepth
+    : isPageEndVisible;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
