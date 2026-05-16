@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import solarBannerImg from "../../assets/images/solar_page_hero.webp";
 
 export const Hero = () => {
   return (
@@ -11,10 +12,13 @@ export const Hero = () => {
             Solar solutions
           </span>
           <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight text-on-surface mb-8 leading-[1.1]">
-            Reliable Solar Power <br />for Modern Living
+            Reliable Solar Power <br />
+            for Modern Living
           </h1>
           <p className="font-body text-xl md:text-2xl text-on-surface-variant max-w-xl mb-12 leading-relaxed">
-            We design and install solar and backup power systems for homes, offices, and commercial spaces that need dependable performance and smarter long-term energy support.
+            We design and install solar and backup power systems for homes,
+            offices, and commercial spaces that need dependable performance and
+            smarter long-term energy support.
           </p>
           <div className="flex flex-wrap gap-6 items-center">
             <Link
@@ -23,7 +27,7 @@ export const Hero = () => {
             >
               Book a Consultation
             </Link>
-             <a
+            <a
               href="https://wa.me/2349074252223"
               target="_blank"
               rel="noopener noreferrer"
@@ -40,10 +44,9 @@ export const Hero = () => {
             <img
               className="w-full h-full object-cover grayscale-[20%] contrast-[1.1]"
               alt="Architectural solar integration on a modern villa"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK3zDzLSJdTmRQJH1WzPb-vbv5x4v_FV-YJj4wZA4alwCyPtwV0IHDh_gEWz78njIQT1MYTiWUnmntX_Ps1UMNFIOhQoUMCEQPkwKdQi34unvTYd7my52WaXwHSJG04C3oQGAUQdU2_9A4Ysk9s4vc-MWVxI9Lt0IDCGTacsceTOdKyoDZULopuecQcxeUNU_I8QQCHWZtPNcS-mKtwR3HFdGfc0XtRg_akb_K9JiyJofTwjhT3dxxT_xZTyu_dvWylLerzD6jyDo"
+              src={solarBannerImg}
             />
           </div>
-          <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-tertiary-fixed hidden md:block z-0" />
         </div>
       </div>
     </header>

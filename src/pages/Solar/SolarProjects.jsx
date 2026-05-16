@@ -1,46 +1,52 @@
-import React, { useState } from 'react';
-import { Button } from '../../components/ui/Button';
-import project1 from '../../assets/images/solar_project_1.png';
-import project2 from '../../assets/images/solar_project_2.png';
+import React, { useState } from "react";
+import { Button } from "../../components/ui/Button";
+import anambraInstallImg from "../../assets/images/anambra_install.avif";
+import estateInstallImg from "../../assets/images/estate_install.avif";
+import inverterInstallImg from "../../assets/images/inverter_install.avif";
+import ketuInstallImg from "../../assets/images/ketu_install.avif";
 
 const allProjects = [
   {
-    id: 1,
-    title: "The Zenith Heights Villa",
-    location: "Ikoyi, Lagos",
+    id: crypto.randomUUID(),
+    title: "Anambra Residential Installation",
     type: "Residential Solar",
-    description: "Full integration of high-efficiency solar panels with smart energy management for a zero-noise luxury residence.",
-    image: project1
+    location: "Anambra, Nigeria",
+    image: anambraInstallImg,
+    description:
+      "A residential solar and backup power installation designed to reduce generator reliance and keep essential home systems running reliably.",
   },
   {
-    id: 2,
-    title: "Apex Corporate Headquarters",
-    location: "Victoria Island, Lagos",
-    type: "Commercial Backup",
-    description: "Large-scale industrial backup power solution to ensure 24/7 operations for a leading financial institution.",
-    image: project2
+    id: crypto.randomUUID(),
+    title: "Inverter & Battery Backup Installation",
+    type: "Backup Power",
+    location: "Lagos, Nigeria",
+    image: inverterInstallImg,
+    description:
+      "An inverter and tubular battery backup setup designed to keep essential systems running during power interruptions.",
   },
   {
-    id: 3,
-    title: "Crystal Cove Estate",
-    location: "Lekki Phase 1, Lagos",
-    type: "Smart Solar Community",
-    description: "Grid-tied solar systems for a premium estate with centralized monitoring and maintenance support.",
-    image: project1 // Reusing images for placeholder purposes
+    id: crypto.randomUUID(),
+    title: "Estate Rooftop Solar Installation",
+    type: "Residential Solar",
+    location: "Lagos, Nigeria",
+    image: estateInstallImg,
+    description:
+      "A clean rooftop solar installation for a modern estate residence, designed to support dependable energy use.",
   },
   {
-    id: 4,
-    title: "The Platinum Executive Suites",
-    location: "Banana Island, Lagos",
-    type: "Bespoke Power System",
-    description: "Custom-engineered power solutions with refined battery storage for executive hospitality.",
-    image: project2 // Reusing images for placeholder purposes
-  }
+    id: crypto.randomUUID(),
+    title: "Ketu Rooftop Solar Installation",
+    type: "Residential Solar",
+    location: "Ketu, Lagos",
+    image: ketuInstallImg,
+    description:
+      "A residential rooftop solar system in Ketu, designed to reduce power interruptions and support dependable daily energy use.",
+  },
 ];
 
 export const SolarProjects = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  
+
   const displayedProjects = isExpanded ? allProjects : allProjects.slice(0, 2);
 
   return (
@@ -59,8 +65,8 @@ export const SolarProjects = () => {
           {displayedProjects.map((project) => (
             <div key={project.id} className="group overflow-hidden">
               <div className="micro-project-image aspect-[16/10] bg-surface-container-highest mb-8">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover grayscale-0 lg:grayscale-[30%] lg:group-hover:grayscale-0"
                 />
@@ -80,8 +86,12 @@ export const SolarProjects = () => {
               </div>
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">{project.title}</h3>
-                  <p className="font-label text-xs uppercase tracking-widest text-on-surface/40">{project.location}</p>
+                  <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="font-label text-xs uppercase tracking-widest text-on-surface/40">
+                    {project.location}
+                  </p>
                 </div>
               </div>
               <p className="font-body text-on-surface-variant max-w-xl italic leading-relaxed">
@@ -92,17 +102,19 @@ export const SolarProjects = () => {
         </div>
 
         <div className="mt-20 flex justify-center">
-          <button 
+          <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="micro-text-link flex items-center gap-4 group"
           >
             <div className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center group-hover:bg-on-surface group-hover:border-on-surface transition-all duration-300">
-              <span className={`material-symbols-outlined text-on-surface group-hover:text-surface-bright transition-transform duration-500 ${isExpanded ? 'rotate-180' : ''}`}>
+              <span
+                className={`material-symbols-outlined text-on-surface group-hover:text-surface-bright transition-transform duration-500 ${isExpanded ? "rotate-180" : ""}`}
+              >
                 keyboard_arrow_down
               </span>
             </div>
             <span className="font-label text-xs uppercase tracking-[0.2em] font-bold text-on-surface">
-              {isExpanded ? 'Show Less Projects' : 'Show All Projects'}
+              {isExpanded ? "Show Less Projects" : "Show All Projects"}
             </span>
           </button>
         </div>

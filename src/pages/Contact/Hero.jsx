@@ -1,8 +1,11 @@
-import React from 'react';
+import React from "react";
+import contactHeroImg from "../../assets/images/contacts_hero.webp";
 
 const scrollToForm = (e) => {
   e.preventDefault();
-  document.getElementById('inquiry')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document
+    .getElementById("inquiry")
+    ?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
 export const Hero = () => {
@@ -18,7 +21,8 @@ export const Hero = () => {
             Let's Talk About <br /> Your Space
           </h1>
           <p className="font-body text-xl md:text-2xl text-on-surface/80 max-w-xl leading-relaxed mb-10">
-            Tell us about your home, office, commercial property, or project needs, and we will help you plan a solution that fits.
+            Tell us about your home, office, commercial property, or project
+            needs, and we will help you plan a solution that fits.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
             <button
@@ -35,16 +39,15 @@ export const Hero = () => {
             >
               Call or WhatsApp
             </a>
-
           </div>
         </div>
 
         {/* Right: Image */}
         <div className="md:col-span-5 h-[500px] overflow-hidden bg-surface-container">
           <img
-            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            className="w-full h-full object-cover md:grayscale hover:grayscale-0 transition-all duration-700"
             alt="Minimalist architectural interior with soft natural light"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIaZOSvWX6URi1xmGuKSA8nLZvAJTXo9o24WvzfgV3BnjH4ZTzhpdvP8AsBSSrKr-BgfjeUgWDaqmT6v0G_jErVNgUYJrgHdd8Y8-mJ6263S24i_-DqmbNE1P7jfg8Y7XHkFJsUKxwbaF3pk2vSPKFM39ZFGcDkJWJU3V0FvYlOtVIT0iPqXmNQ3oBafRDyqp1pJ5LKfbAcisJ9xvZn0smh5xf9QP-__I8WopB7kH-54WjCoFcjrpm6NxmWGbcqND5P7kOtTn9aZk"
+            src={contactHeroImg}
           />
         </div>
       </div>

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 export const Location = () => {
-  const address = '10a, Paul Odulaja Street, Lagos, Nigeria 100234';
+  const address = "10a, Paul Odulaja Street, Lagos, Nigeria 100234";
   const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 
   return (
@@ -25,11 +25,15 @@ export const Location = () => {
             Based in Lagos, Serving Modern Spaces
           </h2>
           <p className="font-body text-xl text-on-surface/70 leading-relaxed mb-10 max-w-md">
-            We work with residential and commercial clients in Lagos, Nigeria, delivering modern energy, smart systems, and interior finishing solutions.
+            We work with residential and commercial clients in Lagos, Nigeria,
+            delivering modern energy, smart systems, and interior finishing
+            solutions.
           </p>
           <div className="flex items-center gap-4 text-secondary">
             <span className="material-symbols-outlined">location_on</span>
-            <span className="font-label text-sm uppercase tracking-widest font-bold">{address}</span>
+            <span className="font-label text-sm uppercase tracking-widest font-bold">
+              {address}
+            </span>
           </div>
         </div>
       </div>
