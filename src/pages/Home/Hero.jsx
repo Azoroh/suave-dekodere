@@ -65,7 +65,7 @@ export const Hero = () => {
           Smarter Living.
         </h1>
 
-        <p className="font-body text-xl md:text-2xl text-surface-bright/90 max-w-xl italic leading-relaxed">
+        <p className="font-body text-xl md:text-2xl text-surface-bright/90 max-w-xl leading-relaxed">
           We help homes, offices, and commercial spaces across Lagos work better
           with solar installations, backup power, smart systems, security, and
           refined finishing.
