@@ -5,6 +5,10 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Solar from './pages/Solar';
 import Contact from './pages/Contact';
+import SmartLiving from './pages/SmartLiving';
+import DesignBuild from './pages/DesignBuild';
+import MEP from './pages/MEP';
+import Shop from './pages/Shop';
 
 function App() {
   return (
@@ -13,7 +17,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/smart-living" element={<SmartLiving />} />
+          <Route path="/design-build" element={<DesignBuild />} />
+          <Route path="/mep" element={<MEP />} />
           <Route path="/solar" element={<Solar />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>

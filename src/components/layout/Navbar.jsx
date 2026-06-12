@@ -1,19 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '../ui/Button';
 import desktopLogo from '../../assets/images/suaveLogo.png';
 import mobileLogo from '../../assets/images/suaveLogo-stacked.png';
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
+  { 
+    name: 'Smart Living', 
+    href: '/smart-living',
+    submenu: [
+      { name: 'Home Automation', href: '/smart-living#automation' },
+      { name: 'Home Cinema', href: '/smart-living#cinema' },
+      { name: 'Home Security', href: '/smart-living#security' },
+    ]
+  },
+  { 
+    name: 'Design & Build', 
+    href: '/design-build',
+    submenu: [
+      { name: 'Custom Furniture', href: '/design-build#furniture' },
+      { name: 'Interior Design', href: '/design-build#interior' },
+      { name: 'Lighting Design', href: '/design-build#lighting' },
+    ]
+  },
+  { name: 'MEP', href: '/mep' },
   { name: 'Solar', href: '/solar' },
+  { name: 'Shop', href: '/shop' },
   { name: 'Contact', href: '/contact' },
 ];
 
 export const Navbar = ({ isGlass = true }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -26,6 +47,12 @@ export const Navbar = ({ isGlass = true }) => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const dropdownVariants = {
+    hidden: { opacity: 0, y: 10, display: 'none' },
+    visible: { opacity: 1, y: 0, display: 'block' },
+    exit: { opacity: 0, y: 10, transition: { duration: 0.2 } }
+  };
 
   return (
     <nav className={`fixed top-0 z-50 w-full px-6 md:px-16 transition-all duration-300 ${
@@ -44,27 +71,72 @@ export const Navbar = ({ isGlass = true }) => {
         </Link>
         
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
-            const isActive = location.pathname === link.href;
+            const isPathActive = location.pathname === link.href;
+            const isSubmenuActive = link.submenu?.some(sub => location.pathname + location.hash === sub.href);
+            const isHovered = hoveredLink === link.name;
+            const isActive = isPathActive || isSubmenuActive || isHovered;
+            
+            const hasSubmenu = link.submenu && link.submenu.length > 0;
+
             return (
-              <Link
-                key={link.name}
-                to={link.href}
-                onClick={() => window.scrollTo(0, 0)}
-                className={`micro-nav-link text-xs font-label uppercase tracking-widest transition-all duration-300 ${
-                  isActive 
-                    ? 'is-active text-[#4b6367] font-bold' 
-                    : 'text-[#30332f] opacity-70 hover:opacity-100 hover:text-[#4b6367]'
-                }`}
+              <div 
+                key={link.name} 
+                className="relative group py-4"
+                onMouseEnter={() => setHoveredLink(link.name)}
+                onMouseLeave={() => setHoveredLink(null)}
               >
-                {link.name}
-              </Link>
+                <Link
+                  to={link.href}
+                  onClick={() => window.scrollTo(0, 0)}
+                  className={`micro-nav-link text-[10px] lg:text-xs font-label uppercase tracking-widest transition-all duration-300 flex items-center gap-1 ${
+                    isActive 
+                      ? 'is-active text-[#4b6367] opacity-100' 
+                      : 'text-[#30332f] opacity-70 hover:opacity-100 hover:text-[#4b6367]'
+                  }`}
+                >
+                  {link.name}
+                  {hasSubmenu && (
+                    <span className={`material-symbols-outlined text-sm transition-transform duration-300 ${hoveredLink === link.name ? 'rotate-180' : ''}`}>
+                      keyboard_arrow_down
+                    </span>
+                  )}
+                </Link>
+
+                {/* Dropdown Menu */}
+                {hasSubmenu && (
+                  <AnimatePresence>
+                    {hoveredLink === link.name && (
+                      <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        variants={dropdownVariants}
+                        className="absolute top-full left-0 min-w-[200px] bg-white/95 backdrop-blur-md border border-outline-variant/20 shadow-xl rounded-sm overflow-hidden"
+                      >
+                        <div className="py-2">
+                          {link.submenu.map((sub) => (
+                            <Link
+                              key={sub.name}
+                              to={sub.href}
+                              className="block px-6 py-3 text-[10px] uppercase tracking-wider text-[#30332f] hover:bg-[#4b6367]/10 hover:text-[#4b6367] transition-colors"
+                              onClick={() => setHoveredLink(null)}
+                            >
+                              {sub.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
             );
           })}
         </div>
         
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Link to="/contact#inquiry">
             <Button variant="primary" size="sm">
               Book a Consultation
@@ -84,35 +156,59 @@ export const Navbar = ({ isGlass = true }) => {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-surface border-t border-outline-variant/20 py-4 px-6 flex flex-col gap-6 shadow-xl">
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.href;
-            return (
-              <Link
-                key={link.name}
-                to={link.href}
-                className={`micro-text-link text-sm font-label uppercase tracking-widest transition-all duration-300 ${
-                  isActive 
-                    ? 'text-[#4b6367] font-bold' 
-                    : 'text-[#30332f] hover:text-[#4b6367]'
-                }`}
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  window.scrollTo(0, 0);
-                }}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
-          <Link to="/contact#inquiry" onClick={() => setIsMobileMenuOpen(false)} className="w-full">
-            <Button variant="primary" className="w-full mt-4" size="md">
-              Book a Consultation
-            </Button>
-          </Link>
-        </div>
-      )}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden absolute top-full left-0 w-full bg-surface border-t border-outline-variant/20 py-6 px-6 flex flex-col gap-4 shadow-xl overflow-hidden"
+          >
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.href;
+              return (
+                <div key={link.name} className="flex flex-col gap-2">
+                  <Link
+                    to={link.href}
+                    className={`micro-text-link text-sm font-label uppercase tracking-widest transition-all duration-300 ${
+                      isActive 
+                        ? 'text-[#4b6367] font-bold' 
+                        : 'text-[#30332f] hover:text-[#4b6367]'
+                    }`}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    {link.name}
+                  </Link>
+                  {link.submenu && (
+                    <div className="pl-4 flex flex-col gap-3 border-l border-outline-variant/30 ml-1 mt-1">
+                      {link.submenu.map((sub) => (
+                        <Link
+                          key={sub.name}
+                          to={sub.href}
+                          className="text-[10px] uppercase tracking-widest text-[#30332f]/60 hover:text-[#4b6367]"
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                          }}
+                        >
+                          {sub.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+            <Link to="/contact#inquiry" onClick={() => setIsMobileMenuOpen(false)} className="w-full">
+              <Button variant="primary" className="w-full mt-4" size="md">
+                Book a Consultation
+              </Button>
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
