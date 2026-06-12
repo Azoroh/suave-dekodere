@@ -7,13 +7,12 @@ import { Footer } from '../../components/layout/Footer';
 
 const DesignBuild = () => {
   return (
-    <main className="overflow-x-hidden">
+    <>
       <Hero />
       <Furniture />
       <Interior />
       <Lighting />
-      <Footer />
-    </main>
+    </>
   );
 };
 

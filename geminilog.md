@@ -43,3 +43,23 @@
 - **Intent**: Remove Navbar layout shift and build the MEP page.
 - **Action**: Removing 'font-bold' from hover states in Navbar.jsx and creating Hero/Technical sections for src/pages/MEP.
 - **Why**: Layout shifts on hover are jarring for users. Stabilizing the font weight while using color/opacity for feedback is more professional. Building the MEP page completes the technical infrastructure trio (Solar, Smart, MEP).
+
+## 2026-06-11 17:35
+- **Intent**: Fix missing content and lint errors.
+- **Action**: Correcting unused motion imports and ensuring all components render properly in SmartLiving and DesignBuild.
+- **Why**: Lint errors were preventing the build/render process from completing correctly. Standardizing the motion usage fixes the visibility issue.
+
+## 2026-06-11 18:05
+- **Intent**: Fix page content visibility bug.
+- **Action**: Removing duplicate Footer and 'main' tags from page index files and fixing SectionLabel export.
+- **Why**: The 'Layout' component already provides a 'main' wrapper and a Footer. Duplicating these inside the page components was causing layout conflicts, and the missing SectionLabel export was breaking the render tree.
+
+## 2026-06-11 18:25
+- **Intent**: Expand clickable areas for Navbar links.
+- **Action**: Refactoring Navbar.jsx to move padding inside Link components and increase the hit box.
+- **Why**: Small hit boxes make navigation frustrating. Expanding the interactive area to include the surrounding space makes the UI feel more responsive and easier to use.
+
+## 2026-06-11 18:35
+- **Intent**: Revert Navbar clickable area expansion.
+- **Action**: Restoring previous padding and gap structure in Navbar.jsx.
+- **Why**: User preferred the previous interaction model over the expanded hit boxes.

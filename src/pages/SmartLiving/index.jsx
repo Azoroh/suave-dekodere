@@ -7,13 +7,12 @@ import { Footer } from '../../components/layout/Footer';
 
 const SmartLiving = () => {
   return (
-    <main className="overflow-x-hidden">
+    <>
       <Hero />
       <Automation />
       <Cinema />
       <Security />
-      <Footer />
-    </main>
+    </>
   );
 };
 

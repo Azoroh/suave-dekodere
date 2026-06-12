@@ -5,7 +5,7 @@ import { Footer } from '../../components/layout/Footer';
 
 const MEP = () => {
   return (
-    <main className="overflow-x-hidden">
+    <>
       <Hero />
       <TechnicalServices />
       <div className="bg-[#30332f] py-20 px-6 md:px-16 text-center text-white">
@@ -19,8 +19,7 @@ const MEP = () => {
           </button>
         </a>
       </div>
-      <Footer />
-    </main>
+    </>
   );
 };
 

@@ -20,7 +20,8 @@ export const Hero = () => {
       <div className="relative z-10 max-w-4xl">
         <motion.span 
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className="inline-block font-label text-xs uppercase tracking-[0.2em] text-white mb-6"
         >
           Elevating Your Lifestyle

@@ -98,7 +98,7 @@ export const Navbar = ({ isGlass = true }) => {
                 >
                   {link.name}
                   {hasSubmenu && (
-                    <span className={`material-symbols-outlined text-sm transition-transform duration-300 ${hoveredLink === link.name ? 'rotate-180' : ''}`}>
+                    <span className={`material-symbols-outlined text-sm transition-transform duration-300 ${isHovered ? 'rotate-180' : ''}`}>
                       keyboard_arrow_down
                     </span>
                   )}
@@ -107,7 +107,7 @@ export const Navbar = ({ isGlass = true }) => {
                 {/* Dropdown Menu */}
                 {hasSubmenu && (
                   <AnimatePresence>
-                    {hoveredLink === link.name && (
+                    {isHovered && (
                       <motion.div
                         initial="hidden"
                         animate="visible"
