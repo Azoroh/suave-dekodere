@@ -4,6 +4,7 @@ import { Hero } from './Hero';
 import { SolarEnergy } from './SolarEnergy';
 import { SmartSystems } from './SmartSystems';
 import { DekodereIntegration } from './DekodereIntegration';
+import { FeaturedShop } from './FeaturedShop';
 import { FeaturedProjects } from './FeaturedProjects';
 import { Process } from './Process';
 import { Leadership } from './Leadership';
@@ -16,6 +17,7 @@ export const Home = () => {
       <ScrollReveal><SolarEnergy /></ScrollReveal>
       <ScrollReveal><SmartSystems /></ScrollReveal>
       <ScrollReveal><DekodereIntegration /></ScrollReveal>
+      <ScrollReveal><FeaturedShop /></ScrollReveal>
       <ScrollReveal><FeaturedProjects /></ScrollReveal>
       <ScrollReveal><Process /></ScrollReveal>
       <ScrollReveal><Leadership /></ScrollReveal>

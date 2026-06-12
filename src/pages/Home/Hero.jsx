@@ -56,19 +56,19 @@ export const Hero = () => {
 
       <div className="relative z-10 max-w-4xl">
         <span className="inline-block font-label text-xs uppercase tracking-[0.2em] text-surface-bright mb-6">
-          Lagos-based solar, smart systems, and interior solutions
+          Sustainable Energy, Smart Systems, and Artisanal Design
         </span>
 
         <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-surface-bright leading-none mb-8">
           Reliable Power.
           <br />
           Smarter Living.
+          <br />
+          Masterful Design.
         </h1>
 
-        <p className="font-body text-xl md:text-2xl text-surface-bright/90 max-w-xl leading-relaxed">
-          We help homes, offices, and commercial spaces across Lagos work better
-          with solar installations, backup power, smart systems, security, and
-          refined finishing.
+        <p className="font-body text-xl md:text-2xl text-surface-bright/90 max-w-2xl leading-relaxed">
+          We integrate high-performance energy solutions and smart technology with bespoke furniture and refined interiors to create exceptional spaces.
         </p>
 
         <div className="mt-12 flex flex-col md:flex-row gap-4">

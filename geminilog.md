@@ -63,3 +63,8 @@
 - **Intent**: Revert Navbar clickable area expansion.
 - **Action**: Restoring previous padding and gap structure in Navbar.jsx.
 - **Why**: User preferred the previous interaction model over the expanded hit boxes.
+
+## 2026-06-11 19:00
+- **Intent**: Refactor Home Page and update Contact Form.
+- **Action**: Updating Home/Hero.jsx messaging, adding Shop preview to Home/index.jsx, and updating Contact/ContactForm.jsx options.
+- **Why**: The Home page needs to act as a unified entry point for all new service verticals. The Contact form must reflect these services to capture relevant leads.

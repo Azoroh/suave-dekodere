@@ -4,10 +4,13 @@ import emailjs from "@emailjs/browser";
 const services = [
   "Solar Installations",
   "Backup Power Solutions",
-  "Smart Home Systems",
-  "CCTV and Security",
-  "Electrical Work",
-  "Interior Finishing",
+  "Smart Home & Automation",
+  "Home Cinema & Multimedia",
+  "CCTV and Home Security",
+  "Custom Furniture & Build",
+  "Interior Design",
+  "Lighting Design",
+  "MEP Infrastructure",
 ];
 
 const initialForm = {
