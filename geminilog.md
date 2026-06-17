@@ -98,3 +98,8 @@
 - **Intent**: Refine Shop transitions to fix "immediate display" bug.
 - **Action**: Deriving activeCategory directly from searchParams and animating the entire grid as a single unit.
 - **Why**: Eliminating local state for the category removes the double-render lag. Animating the entire grid with a key provides a more stable and premium transition than individual item animations.
+
+## 2026-06-17 10:55
+- **Intent**: Restore Shop product visibility and align categories.
+- **Action**: Re-writing Shop/index.jsx with consistent category names and fixed filtering logic.
+- **Why**: To fix the issue where categories appeared empty and ensure consistent naming (e.g., "Solar" instead of "Renewable Energy") across the home and shop pages.

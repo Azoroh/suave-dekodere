@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ProductCard } from '../../components/ui/ProductCard';
@@ -41,7 +41,7 @@ const products = [
   {
     id: 5,
     name: '5KW Hybrid Inverter',
-    category: 'Renewable Energy',
+    category: 'Solar',
     price: 780000,
     image: 'https://images.unsplash.com/photo-1621905252507-b35242f8969d?auto=format&fit=crop&q=80&w=800',
     description: 'High-efficiency pure sine wave inverter for residential solar systems.'
@@ -56,7 +56,7 @@ const products = [
   }
 ];
 
-const categories = ['All', 'Security', 'Furniture', 'Smart Home', 'Lighting', 'Renewable Energy'];
+const categories = ['All', 'Security', 'Furniture', 'Smart Home', 'Lighting', 'Solar'];
 
 const Shop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -74,7 +74,7 @@ const Shop = () => {
 
   const filteredProducts = activeCategory === 'All' 
     ? products 
-    : products.filter(p => p.category === activeCategory);
+    : products.filter(p => p.category.toLowerCase() === activeCategory.toLowerCase());
 
   return (
     <div className="bg-surface min-h-screen pt-32 pb-20 px-6 md:px-16">
@@ -97,7 +97,7 @@ const Shop = () => {
               key={cat}
               onClick={() => handleCategoryChange(cat)}
               className={`px-6 py-2 text-xs font-label uppercase tracking-widest transition-all duration-300 rounded-full border ${
-                activeCategory === cat
+                activeCategory.toLowerCase() === cat.toLowerCase()
                   ? 'bg-[#4b6367] text-white border-[#4b6367]'
                   : 'bg-white text-[#30332f] border-outline-variant/20 hover:border-[#4b6367] hover:text-[#4b6367]'
               }`}
@@ -108,20 +108,28 @@ const Shop = () => {
         </div>
 
         {/* Product Grid with stable whole-grid transition */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCategory}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </motion.div>
-        </AnimatePresence>
+        <div className="min-h-[400px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {filteredProducts.length > 0 ? (
+                filteredProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))
+              ) : (
+                <div className="col-span-full py-20 text-center opacity-50">
+                  <p className="text-lg italic">No items found in this category.</p>
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
         {/* CTA Section */}
         <motion.div 
