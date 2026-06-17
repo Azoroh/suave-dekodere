@@ -88,3 +88,13 @@
 - **Intent**: Fix Shop page crash caused by missing data.
 - **Action**: Restoring products and categories arrays in Shop/index.jsx.
 - **Why**: A previous edit accidentally used a placeholder comment instead of the actual data, causing the page to crash due to undefined variables.
+
+## 2026-06-17 10:35
+- **Intent**: Fix Shop category filtering flickering.
+- **Action**: Switching AnimatePresence mode to 'wait' and refining ProductCard animation duration.
+- **Why**: Sequential transitions prevent old and new items from overlapping, eliminating the flickering/ghosting effect during category switches.
+
+## 2026-06-17 10:45
+- **Intent**: Refine Shop transitions to fix "immediate display" bug.
+- **Action**: Deriving activeCategory directly from searchParams and animating the entire grid as a single unit.
+- **Why**: Eliminating local state for the category removes the double-render lag. Animating the entire grid with a key provides a more stable and premium transition than individual item animations.

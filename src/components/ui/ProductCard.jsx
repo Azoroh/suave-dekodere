@@ -6,14 +6,7 @@ export const ProductCard = ({ product }) => {
   const { name, category, price, image, description } = product;
 
   return (
-    <motion.div 
-      layout
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.4 }}
-      className="group bg-white border border-outline-variant/10 rounded-sm overflow-hidden hover:shadow-xl transition-all duration-500"
-    >
+    <div className="group bg-white border border-outline-variant/10 rounded-sm overflow-hidden hover:shadow-xl transition-all duration-500">
       <div className="relative aspect-square overflow-hidden bg-surface">
         <img 
           src={image} 
@@ -52,6 +45,6 @@ export const ProductCard = ({ product }) => {
           </Button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };

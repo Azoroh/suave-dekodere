@@ -60,13 +60,7 @@ const categories = ['All', 'Security', 'Furniture', 'Smart Home', 'Lighting', 'R
 
 const Shop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const initialCategory = searchParams.get('category') || 'All';
-  const [activeCategory, setActiveCategory] = useState(initialCategory);
-
-  useEffect(() => {
-    const category = searchParams.get('category') || 'All';
-    setActiveCategory(category);
-  }, [searchParams]);
+  const activeCategory = searchParams.get('category') || 'All';
 
   const handleCategoryChange = (cat) => {
     if (cat === 'All') {
@@ -113,14 +107,21 @@ const Shop = () => {
           ))}
         </div>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence mode="popLayout">
+        {/* Product Grid with stable whole-grid transition */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCategory}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
-          </AnimatePresence>
-        </div>
+          </motion.div>
+        </AnimatePresence>
 
         {/* CTA Section */}
         <motion.div 
