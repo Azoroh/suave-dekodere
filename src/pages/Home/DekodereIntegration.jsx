@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import dekodereLogo from "../../assets/images/dekodereLogo-split-black.png";
 import dekodereImg from "../../assets/images/dekodere_integration.avif";
 
@@ -28,35 +30,49 @@ export const DekodereIntegration = () => {
           </div>
 
           <h2 className="font-headline text-5xl md:text-6xl font-bold tracking-tighter mb-10 text-on-surface">
-            Atmosphere.
+            Artisanal Design.
             <br />
-            The Final Layer.
+            Atmospheric Living.
           </h2>
 
           <p className="font-body text-2xl text-on-surface/80 leading-snug italic mb-10">
-            Once the systems are in place, the space can truly come alive.
-            Dékódèrè brings warmth, lighting, interior calm, and finishing
-            detail to the spaces we help build and power.
+            Beyond the systems, we craft the soul of your space. Dékódèrè brings custom furniture, artisanal lighting, and refined interior design to every project.
           </p>
 
-          <p className="font-body text-lg text-on-surface/60 mb-12 max-w-lg">
-            From feature lighting to thoughtful interior touches, we create
-            spaces that feel complete, comfortable, and beautifully resolved.
-          </p>
+          <div className="grid grid-cols-2 gap-8 mb-12 max-w-lg">
+            <div>
+              <h4 className="font-bold text-[#30332f] mb-2 uppercase text-xs tracking-widest">Bespoke Furniture</h4>
+              <p className="text-sm text-on-surface/60">Custom couches, cabinets, and masterfully built wooden pieces.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-[#30332f] mb-2 uppercase text-xs tracking-widest">Interior Styling</h4>
+              <p className="text-sm text-on-surface/60">Refined finishes and spatial design for residential and commercial builds.</p>
+            </div>
+          </div>
 
-          <a
-            href="https://www.instagram.com/dekoderebysuave/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="micro-text-link group flex items-center gap-4 text-tertiary hover:text-on-surface transition-colors"
-          >
-            <span className="font-label text-xs uppercase tracking-widest font-bold">
-              Explore Dékódèrè
-            </span>
-            <span className="material-symbols-outlined transition-transform group-hover:translate-x-2">
-              arrow_right_alt
-            </span>
-          </a>
+          <div className="flex flex-col sm:flex-row gap-8">
+            <Link
+              to="/design-build"
+              className="micro-text-link group flex items-center gap-4 text-tertiary hover:text-on-surface transition-colors"
+            >
+              <span className="font-label text-xs uppercase tracking-widest font-bold">
+                View Design & Build
+              </span>
+              <span className="material-symbols-outlined transition-transform group-hover:translate-x-2">
+                arrow_right_alt
+              </span>
+            </Link>
+            <a
+              href="https://www.instagram.com/dekoderebysuave/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="micro-text-link group flex items-center gap-4 text-tertiary/60 hover:text-on-surface transition-colors"
+            >
+              <span className="font-label text-[10px] uppercase tracking-widest">
+                Instagram Portfolio
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

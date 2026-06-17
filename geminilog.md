@@ -68,3 +68,23 @@
 - **Intent**: Refactor Home Page and update Contact Form.
 - **Action**: Updating Home/Hero.jsx messaging, adding Shop preview to Home/index.jsx, and updating Contact/ContactForm.jsx options.
 - **Why**: The Home page needs to act as a unified entry point for all new service verticals. The Contact form must reflect these services to capture relevant leads.
+
+## 2026-06-11 19:15
+- **Intent**: Refine Home page service sections for broader scope.
+- **Action**: Updating SolarEnergy.jsx, SmartSystems.jsx, and DekodereIntegration.jsx with new copy and categories.
+- **Why**: The individual service sections on the home page need to be more comprehensive and consistent with the new pages and the 'Lifestyle & Infrastructure' branding.
+
+## 2026-06-17 10:05
+- **Intent**: Implement hash scrolling for Smart Living and Design & Build pages.
+- **Action**: Adding useEffect hooks to SmartLiving/index.jsx and DesignBuild/index.jsx to handle anchor scrolling.
+- **Why**: Navbar submenu links use hashes (e.g., #cinema). Without this logic, navigating to these pages from another page doesn't automatically scroll to the target section, leading to a disconnected user experience.
+
+## 2026-06-17 10:15
+- **Intent**: Support category filtering via URL in Shop page.
+- **Action**: Updating Shop/index.jsx to use useSearchParams for initial category state.
+- **Why**: To allow the "Featured Shop" section on the Home page to link directly to filtered categories, improving navigation flow.
+
+## 2026-06-17 10:25
+- **Intent**: Fix Shop page crash caused by missing data.
+- **Action**: Restoring products and categories arrays in Shop/index.jsx.
+- **Why**: A previous edit accidentally used a placeholder comment instead of the actual data, causing the page to crash due to undefined variables.

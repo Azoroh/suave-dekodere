@@ -8,43 +8,38 @@ export const SolarEnergy = () => {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-5 order-2 md:order-1">
           <span className="font-label text-xs uppercase tracking-widest text-secondary mb-4 block">
-            Solar and backup power
+            Sustainable Power & Infrastructure
           </span>
           <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tighter mb-8 text-on-surface">
-            Reliable Energy for Homes and Businesses
+            Reliable Energy, <br /> Built for the Future
           </h2>
           <p className="font-body text-lg text-on-surface/80 leading-relaxed mb-8">
-            Power supply should not interrupt how you live or work. We design
-            and install solar and backup power systems that help homes, offices,
-            and commercial properties stay efficient, secure, and prepared for
-            everyday demands in Nigeria.
+            Power is the foundation of a modern home. We design and install high-performance solar and MEP infrastructure that ensures your space remains efficient, comfortable, and fully operational 24/7.
           </p>
           <ul className="space-y-6 mb-12">
             <li className="flex items-start gap-4">
               <span className="material-symbols-outlined text-secondary">
-                energy_savings_leaf
+                bolt
               </span>
               <div>
                 <span className="font-headline font-bold text-on-surface block">
-                  Solar and backup systems tailored to your property
+                  Solar & MEP Infrastructure
                 </span>
                 <p className="font-body text-on-surface/60 italic">
-                  Custom engineering ensures the right capacity for your
-                  specific energy load requirements.
+                  Complete energy and utility engineering tailored for luxury residential and commercial builds.
                 </p>
               </div>
             </li>
             <li className="flex items-start gap-4">
               <span className="material-symbols-outlined text-secondary">
-                shield_with_heart
+                eco
               </span>
               <div>
                 <span className="font-headline font-bold text-on-surface block">
-                  Reliable performance for daily living and business continuity
+                  Sustainable Luxury
                 </span>
                 <p className="font-body text-on-surface/60 italic">
-                  Seamless transitions and durable components designed for the
-                  local environment.
+                  Clean, quiet, and reliable power that enhances your lifestyle without compromise.
                 </p>
               </div>
             </li>

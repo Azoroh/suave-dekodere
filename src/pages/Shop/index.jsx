@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ProductCard } from '../../components/ui/ProductCard';
 import { SectionLabel } from '../../components/ui/SectionLabel';
@@ -58,7 +59,24 @@ const products = [
 const categories = ['All', 'Security', 'Furniture', 'Smart Home', 'Lighting', 'Renewable Energy'];
 
 const Shop = () => {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialCategory = searchParams.get('category') || 'All';
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
+
+  useEffect(() => {
+    const category = searchParams.get('category') || 'All';
+    setActiveCategory(category);
+  }, [searchParams]);
+
+  const handleCategoryChange = (cat) => {
+    if (cat === 'All') {
+      const newParams = new URLSearchParams(searchParams);
+      newParams.delete('category');
+      setSearchParams(newParams);
+    } else {
+      setSearchParams({ category: cat });
+    }
+  };
 
   const filteredProducts = activeCategory === 'All' 
     ? products 
@@ -83,7 +101,7 @@ const Shop = () => {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => handleCategoryChange(cat)}
               className={`px-6 py-2 text-xs font-label uppercase tracking-widest transition-all duration-300 rounded-full border ${
                 activeCategory === cat
                   ? 'bg-[#4b6367] text-white border-[#4b6367]'
