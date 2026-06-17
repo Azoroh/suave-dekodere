@@ -113,3 +113,8 @@
 - **Intent**: Enhance WhatsApp inquiries with rich image previews.
 - **Action**: Including product image URLs in pre-filled WhatsApp messages in ProductCard.jsx.
 - **Why**: WhatsApp's link preview feature will automatically display the item image when the message contains a direct link, providing immediate visual context for the sales team.
+
+## 2026-06-17 11:25
+- **Intent**: Enhance SEO and Social Sharing (Open Graph).
+- **Action**: Updating index.html with comprehensive meta tags, descriptions, and OG properties.
+- **Why**: To ensure a professional and branded preview (including logo and description) when the site link is shared on WhatsApp, Instagram, or other platforms.
