@@ -6,8 +6,8 @@ export const ProductCard = ({ product }) => {
   const { name, category, price, image, description } = product;
 
   return (
-    <div className="group bg-white border border-outline-variant/10 rounded-sm overflow-hidden hover:shadow-xl transition-all duration-500">
-      <div className="relative aspect-square overflow-hidden bg-surface">
+    <div className="group bg-white border border-outline-variant/10 rounded-sm overflow-hidden hover:shadow-xl transition-all duration-500 flex flex-col h-full">
+      <div className="relative aspect-square overflow-hidden bg-surface shrink-0">
         <img 
           src={image} 
           alt={name} 
@@ -20,8 +20,8 @@ export const ProductCard = ({ product }) => {
         </div>
       </div>
       
-      <div className="p-6">
-        <h3 className="text-lg font-bold text-[#30332f] mb-2 group-hover:text-[#4b6367] transition-colors">
+      <div className="p-4 md:p-6 flex-1 flex flex-col">
+        <h3 className="text-lg font-bold text-[#30332f] mb-2 group-hover:text-[#4b6367] transition-colors line-clamp-2">
           {name}
         </h3>
         <p className="text-sm text-secondary opacity-70 mb-4 line-clamp-2">

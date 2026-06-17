@@ -133,3 +133,13 @@
 - **Intent**: Refine ProductCard footer layout for mobile.
 - **Action**: Aligning price and Enquire button side-by-side on all screens and reverting button text.
 - **Why**: To maintain a clean horizontal layout even in tight 2-column mobile views, ensuring critical information and actions are immediately visible together.
+
+## 2026-06-17 12:05
+- **Intent**: Fix perceived spacing asymmetry in ProductCard on mobile.
+- **Action**: Reducing card padding from p-6 to p-4 on mobile and p-6 on desktop.
+- **Why**: p-6 (24px) was too wide for the 2-column mobile grid, causing the price tag to appear excessively indented compared to the tighter button. Responsive padding balances the visual weight.
+
+## 2026-06-17 12:15
+- **Intent**: Fix inconsistent ProductCard heights and footer alignment.
+- **Action**: Implementing flex-col and h-full on ProductCard to anchor footers to the bottom.
+- **Why**: Variation in title lengths caused footers to sit at different heights. Flexbox ensures all cards in a row have uniform height and that the "Enquire" button is always at the bottom edge.
