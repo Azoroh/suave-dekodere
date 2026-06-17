@@ -13,7 +13,7 @@ const MEP = () => {
         <p className="opacity-60 mb-8 max-w-xl mx-auto italic">
           Our team of certified engineers is ready to provide comprehensive MEP solutions for your next build.
         </p>
-        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/2349074252223" target="_blank" rel="noopener noreferrer">
           <button className="px-10 py-4 bg-white text-[#30332f] font-label uppercase text-xs tracking-[0.2em] hover:bg-[#4b6367] hover:text-white transition-all duration-300">
             Book Engineering Consultation
           </button>

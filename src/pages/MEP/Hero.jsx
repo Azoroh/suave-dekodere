@@ -49,7 +49,7 @@ export const Hero = () => {
           transition={{ delay: 0.3 }}
           className="mt-12"
         >
-          <a href="https://wa.me/234XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/2349074252223" target="_blank" rel="noopener noreferrer">
             <Button variant="surface" size="lg">
               Consult with an Engineer
             </Button>

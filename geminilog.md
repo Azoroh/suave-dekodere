@@ -103,3 +103,8 @@
 - **Intent**: Restore Shop product visibility and align categories.
 - **Action**: Re-writing Shop/index.jsx with consistent category names and fixed filtering logic.
 - **Why**: To fix the issue where categories appeared empty and ensure consistent naming (e.g., "Solar" instead of "Renewable Energy") across the home and shop pages.
+
+## 2026-06-17 11:05
+- **Intent**: Implement WhatsApp inquiry and fix placeholder links.
+- **Action**: Updating ProductCard.jsx and multiple Hero components to use the correct WhatsApp number (2349074252223).
+- **Why**: To enable functional customer inquiries for shop items and ensure all call-to-action buttons across the site lead to the correct contact line.

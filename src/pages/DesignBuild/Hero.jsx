@@ -49,7 +49,7 @@ export const Hero = () => {
           transition={{ delay: 0.3 }}
           className="mt-12 flex flex-col md:flex-row gap-4"
         >
-          <a href="https://wa.me/234XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/2349074252223" target="_blank" rel="noopener noreferrer">
             <Button variant="surface" size="lg">
               Start Your Project
             </Button>
