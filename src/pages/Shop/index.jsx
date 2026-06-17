@@ -2,6 +2,7 @@ import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ProductCard } from '../../components/ui/ProductCard';
+import { ProductModal } from '../../components/ui/ProductModal';
 import { SectionLabel } from '../../components/ui/SectionLabel';
 
 // Mock data for initial catalog
@@ -60,6 +61,7 @@ const categories = ['All', 'Security', 'Furniture', 'Smart Home', 'Lighting', 'S
 
 const Shop = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedProduct, setSelectedProduct] = React.useState(null);
   const activeCategory = searchParams.get('category') || 'All';
 
   const handleCategoryChange = (cat) => {
@@ -121,7 +123,11 @@ const Shop = () => {
 
               {filteredProducts.length > 0 ? (
                 filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                  <ProductCard 
+                    key={product.id} 
+                    product={product} 
+                    onClick={() => setSelectedProduct(product)}
+                  />
                 ))
               ) : (
                 <div className="col-span-full py-20 text-center opacity-50">
@@ -131,6 +137,16 @@ const Shop = () => {
             </motion.div>
           </AnimatePresence>
         </div>
+
+        {/* Product Modal */}
+        <AnimatePresence>
+          {selectedProduct && (
+            <ProductModal 
+              product={selectedProduct} 
+              onClose={() => setSelectedProduct(null)} 
+            />
+          )}
+        </AnimatePresence>
 
         {/* CTA Section */}
         <motion.div 
