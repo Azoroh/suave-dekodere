@@ -37,7 +37,7 @@ export const ProductCard = ({ product }) => {
             size="sm"
             className="!py-2 !px-4 text-[10px]"
             onClick={() => {
-              const message = encodeURIComponent(`Hi Suave & Dekodere, I'm interested in the ${name}. Could you provide more details?`);
+              const message = encodeURIComponent(`Hi Suave & Dekodere, I'm interested in the ${name}.\n\nProduct Image: ${image}\n\nCould you provide more details?`);
               window.open(`https://wa.me/2349074252223?text=${message}`, '_blank');
             }}
           >

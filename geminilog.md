@@ -108,3 +108,8 @@
 - **Intent**: Implement WhatsApp inquiry and fix placeholder links.
 - **Action**: Updating ProductCard.jsx and multiple Hero components to use the correct WhatsApp number (2349074252223).
 - **Why**: To enable functional customer inquiries for shop items and ensure all call-to-action buttons across the site lead to the correct contact line.
+
+## 2026-06-17 11:15
+- **Intent**: Enhance WhatsApp inquiries with rich image previews.
+- **Action**: Including product image URLs in pre-filled WhatsApp messages in ProductCard.jsx.
+- **Why**: WhatsApp's link preview feature will automatically display the item image when the message contains a direct link, providing immediate visual context for the sales team.
