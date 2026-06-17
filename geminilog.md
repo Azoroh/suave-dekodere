@@ -128,3 +128,8 @@
 - **Intent**: Refine category pill spacing for mobile.
 - **Action**: Reducing gap and padding for category buttons on mobile view.
 - **Why**: Smaller spacing between pills creates a more compact and professional look on mobile screens, preventing excessive wrapping and white space.
+
+## 2026-06-17 11:55
+- **Intent**: Refine ProductCard footer layout for mobile.
+- **Action**: Aligning price and Enquire button side-by-side on all screens and reverting button text.
+- **Why**: To maintain a clean horizontal layout even in tight 2-column mobile views, ensuring critical information and actions are immediately visible together.
