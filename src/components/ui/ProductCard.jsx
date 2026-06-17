@@ -28,20 +28,20 @@ export const ProductCard = ({ product }) => {
           {description}
         </p>
         
-        <div className="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/10">
-          <span className="text-lg font-bold text-[#30332f]">
+        <div className="flex flex-col gap-4 mt-auto pt-4 border-t border-outline-variant/10">
+          <span className="text-base md:text-lg font-bold text-[#30332f]">
             {price ? `₦${price.toLocaleString()}` : 'Contact for Price'}
           </span>
           <Button 
-            variant="secondary" 
+            variant="primary" 
             size="sm"
-            className="!py-2 !px-4 text-[10px]"
+            className="w-full !py-3 text-[10px] uppercase tracking-widest"
             onClick={() => {
               const message = encodeURIComponent(`Hi Suave & Dekodere, I'm interested in the ${name}.\n\nProduct Image: ${image}\n\nCould you provide more details?`);
               window.open(`https://wa.me/2349074252223?text=${message}`, '_blank');
             }}
           >
-            Enquire
+            Enquire Now
           </Button>
         </div>
       </div>

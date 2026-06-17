@@ -118,3 +118,8 @@
 - **Intent**: Enhance SEO and Social Sharing (Open Graph).
 - **Action**: Updating index.html with comprehensive meta tags, descriptions, and OG properties.
 - **Why**: To ensure a professional and branded preview (including logo and description) when the site link is shared on WhatsApp, Instagram, or other platforms.
+
+## 2026-06-17 11:35
+- **Intent**: Optimize Shop mobile layout and button prominence.
+- **Action**: Updating Shop grid to 2 columns on mobile and restyling the Enquire button in ProductCard.jsx.
+- **Why**: 2 columns on mobile provide better product density, and a more prominent button improves the call-to-action conversion rate.
