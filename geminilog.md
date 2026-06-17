@@ -143,3 +143,8 @@
 - **Intent**: Fix inconsistent ProductCard heights and footer alignment.
 - **Action**: Implementing flex-col and h-full on ProductCard to anchor footers to the bottom.
 - **Why**: Variation in title lengths caused footers to sit at different heights. Flexbox ensures all cards in a row have uniform height and that the "Enquire" button is always at the bottom edge.
+
+## 2026-06-17 12:25
+- **Intent**: Optimize ProductModal for single-screen visibility.
+- **Action**: Refactoring ProductModal.jsx to prevent scrolling and implementing responsive scaling for all elements.
+- **Why**: User prefers a "one-glance" experience where no scrolling is required. Scaling down fonts and images on smaller screens ensures all product info and the "Enquire" button remain visible.
