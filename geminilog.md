@@ -123,3 +123,8 @@
 - **Intent**: Optimize Shop mobile layout and button prominence.
 - **Action**: Updating Shop grid to 2 columns on mobile and restyling the Enquire button in ProductCard.jsx.
 - **Why**: 2 columns on mobile provide better product density, and a more prominent button improves the call-to-action conversion rate.
+
+## 2026-06-17 11:45
+- **Intent**: Refine category pill spacing for mobile.
+- **Action**: Reducing gap and padding for category buttons on mobile view.
+- **Why**: Smaller spacing between pills creates a more compact and professional look on mobile screens, preventing excessive wrapping and white space.

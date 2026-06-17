@@ -91,12 +91,12 @@ const Shop = () => {
         </header>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap gap-4 mb-12">
+        <div className="flex flex-wrap gap-2 md:gap-4 mb-8 md:mb-12">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => handleCategoryChange(cat)}
-              className={`px-6 py-2 text-xs font-label uppercase tracking-widest transition-all duration-300 rounded-full border ${
+              className={`px-4 md:px-6 py-2 text-[10px] md:text-xs font-label uppercase tracking-widest transition-all duration-300 rounded-full border ${
                 activeCategory.toLowerCase() === cat.toLowerCase()
                   ? 'bg-[#4b6367] text-white border-[#4b6367]'
                   : 'bg-white text-[#30332f] border-outline-variant/20 hover:border-[#4b6367] hover:text-[#4b6367]'
