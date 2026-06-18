@@ -191,3 +191,8 @@ av transitions.n- **Why**: AnimatePresence and height: \auto\ can be unstable wi
 - **Intent**: Fix homepage video playing bug where it stops on tab switch or doesn't play initially.
 - **Action**: Updated the IntersectionObserver in Home/Hero.jsx to track tab visibility (visibilitychange) alongside viewport intersection, and added robust fallback play logic.
 - **Why**: Browsers automatically pause background videos. Returning to the tab does not trigger a new IntersectionObserver event, leaving the video paused. Tracking document.visibilityState ensures it resumes when the user comes back.
+
+## 2026-06-18 22:18
+- **Intent**: Fix homepage video not playing on initial reload (especially with Suspense/lazy loading).
+- **Action**: Updated Hero.jsx to force video.muted = true on mount, initialize isIntersecting to true, and immediately call attemptPlay(). Changed observer threshold to 0.
+- **Why**: Dynamically injected videos (via React.lazy) sometimes fail native autoPlay. By forcing play on mount and assuming it's initially intersecting (since it's a Hero component), we bypass delays caused by the IntersectionObserver firing late or browser autoplay restrictions on dynamic elements.

@@ -10,13 +10,21 @@ export const Hero = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    let isIntersecting = false;
+    // Force muted to ensure autoplay works on dynamic loads (especially Safari)
+    video.defaultMuted = true;
+    video.muted = true;
+
+    // Assume true on mount since Hero is at the top of the page
+    let isIntersecting = true;
 
     const attemptPlay = () => {
       if (video && isIntersecting && document.visibilityState === "visible") {
         video.play().catch(() => {});
       }
     };
+
+    // Force play on mount to bypass IntersectionObserver delay
+    attemptPlay();
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -27,7 +35,7 @@ export const Hero = () => {
           video.pause();
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0 },
     );
 
     observer.observe(video);
