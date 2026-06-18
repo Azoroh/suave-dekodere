@@ -181,3 +181,8 @@ av transitions.n- **Why**: AnimatePresence and height: \auto\ can be unstable wi
 - **Intent**: Remove the redundant and orphaned Services page.
 - **Action**: Deleted the src/pages/Services directory and removed its route from App.jsx.
 - **Why**: The page was no longer linked in the navigation, and its content has been superseded by the dedicated service pages (Smart Living, Design & Build, MEP, Solar). Removing dead code keeps the project clean and maintainable.
+
+## 2026-06-18 22:01
+- **Intent**: Optimize initial load time and perceived performance through code-splitting and lazy-loading.
+- **Action**: Refactored App.jsx to use React.lazy() and Suspense for all page routes, created a custom PageLoader component, and ensured all below-the-fold images across components (ProductCard, ProductModal) have loading="lazy" and decoding="async".
+- **Why**: Synchronous loading of all pages bloats the initial bundle size. Code-splitting loads only the requested page chunk, while image lazy-loading defers off-screen image requests, drastically improving TTI (Time to Interactive) and overall site performance.

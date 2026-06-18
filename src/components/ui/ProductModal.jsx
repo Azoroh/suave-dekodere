@@ -40,6 +40,8 @@ export const ProductModal = ({ product, onClose }) => {
             <img 
               src={image} 
               alt={name} 
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
             />
           </div>
