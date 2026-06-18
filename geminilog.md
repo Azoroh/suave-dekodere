@@ -196,3 +196,8 @@ av transitions.n- **Why**: AnimatePresence and height: \auto\ can be unstable wi
 - **Intent**: Fix homepage video not playing on initial reload (especially with Suspense/lazy loading).
 - **Action**: Updated Hero.jsx to force video.muted = true on mount, initialize isIntersecting to true, and immediately call attemptPlay(). Changed observer threshold to 0.
 - **Why**: Dynamically injected videos (via React.lazy) sometimes fail native autoPlay. By forcing play on mount and assuming it's initially intersecting (since it's a Hero component), we bypass delays caused by the IntersectionObserver firing late or browser autoplay restrictions on dynamic elements.
+
+## 2026-06-18 22:38
+- **Intent**: Redesign the Home page Hero section to achieve a premium, state-of-the-art aesthetic.
+- **Action**: Implementing cinematic framer-motion typography animations, a dynamic gradient overlay, a floating glassmorphism widget, an animated scroll indicator, and enhanced button hover states in Hero.jsx.
+- **Why**: The user requested a design critique and approved a plan to elevate the Hero section from a standard static layout to an Awwwards-style dynamic experience to better reflect the brand's high-end craftsmanship.

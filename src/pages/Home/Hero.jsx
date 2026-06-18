@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Button } from "../../components/ui/Button";
 
 export const Hero = () => {
@@ -56,21 +57,29 @@ export const Hero = () => {
     };
   }, []);
 
+  // Animation variants
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] } },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
   return (
     <section className="relative h-screen flex items-center px-6 md:px-16 overflow-hidden pt-24 md:pt-0">
       <div className="absolute inset-0 z-0">
-        {/* <img
-          className="w-full h-full object-cover grayscale-[20%] brightness-75"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-          alt="luxury modern architectural villa exterior at dusk with warm interior lighting and clean minimalist lines"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTO4fX9XTHQS5mrplo3pWkyYfK2MzyVUUAj8MmKhX8u9i2q3E33hMS69-KEKwM94Hb9CKgFzNnIvN9Rat2UD-V_6zmPByPAV94CmSj0BpJwmWf0nLLoDgXLC7fA50YD0Apr6Ve4BZYba4NzMFB-dL3hchmX_Fu76U7Uzv--kIN14e7XnCgsQs-TJfmf5faGQQuA7GmS7vzyhHHCnBiasPBvxpyreyElm9XoJK3okyx2J2xWdCLXQthztG6BvQ6Erwq7MFzRpX82dA"
-        /> */}
-
         <video
           ref={videoRef}
-          className="w-full h-full object-cover grayscale-[20%]"
+          className="w-full h-full object-cover grayscale-[30%] brightness-90"
           autoPlay
           muted
           loop
@@ -81,39 +90,112 @@ export const Hero = () => {
           <source src="/home-hero-video.mp4" type="video/mp4" />
         </video>
 
-        <div className="absolute inset-0 bg-black/50" />
+        {/* Dynamic Gradient Overlay instead of flat black */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10 opacity-60" />
       </div>
 
-      <div className="relative z-10 max-w-4xl">
-        <span className="inline-block font-label text-xs uppercase tracking-[0.2em] text-surface-bright mb-6">
+      <motion.div 
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+        className="relative z-20 max-w-4xl"
+      >
+        <motion.span 
+          variants={fadeUp}
+          className="inline-block font-label text-xs uppercase tracking-[0.2em] text-surface-bright/80 mb-6"
+        >
           Sustainable Energy, Smart Systems, and Artisanal Design
-        </span>
+        </motion.span>
 
-        <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-surface-bright leading-none mb-8">
-          Reliable Power.
-          <br />
-          Smarter Living.
-          <br />
-          Masterful Design.
-        </h1>
+        <motion.h1 
+          className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-surface-bright leading-[1.05] mb-8"
+        >
+          <motion.div variants={fadeUp} className="overflow-hidden">
+            Reliable Power.
+          </motion.div>
+          <motion.div variants={fadeUp} className="overflow-hidden">
+            Smarter Living.
+          </motion.div>
+          <motion.div variants={fadeUp} className="overflow-hidden">
+            Masterful Design.
+          </motion.div>
+        </motion.h1>
 
-        <p className="font-body text-xl md:text-2xl text-surface-bright/90 max-w-2xl leading-relaxed">
+        <motion.p 
+          variants={fadeUp}
+          className="font-body text-xl md:text-2xl text-surface-bright/80 max-w-2xl leading-relaxed font-light"
+        >
           We integrate high-performance energy solutions and smart technology with bespoke furniture and refined interiors to create exceptional spaces.
-        </p>
+        </motion.p>
 
-        <div className="mt-12 flex flex-col md:flex-row gap-4">
+        <motion.div variants={fadeUp} className="mt-12 flex flex-col md:flex-row gap-6 items-start md:items-center">
           <Link to="/contact#inquiry">
-            <Button variant="surface" size="lg">
+            <Button variant="surface" size="lg" className="hover:scale-105 transition-transform duration-300 shadow-xl shadow-black/20">
               Book a Consultation
             </Button>
           </Link>
-          <Link to="/services#technical-excellence">
-            <Button variant="outline" size="lg">
-              Explore Our Services
-            </Button>
+          <Link to="/smart-living">
+            <button className="flex items-center gap-3 text-surface-bright/70 hover:text-surface-bright transition-colors duration-300 group">
+              <span className="font-label text-xs uppercase tracking-[0.15em]">Explore Our Systems</span>
+              <span className="material-symbols-outlined text-sm transform group-hover:translate-x-1 transition-transform duration-300">
+                arrow_forward
+              </span>
+            </button>
           </Link>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Floating Glass Widget */}
+      <motion.div 
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
+        className="hidden lg:flex absolute right-16 top-1/2 -translate-y-1/2 z-20 flex-col gap-6"
+      >
+        <motion.div 
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl flex items-center gap-4 w-64"
+        >
+          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shrink-0">
+            <span className="material-symbols-outlined text-white">solar_power</span>
+          </div>
+          <div>
+            <div className="text-white font-bold text-xl">150+</div>
+            <div className="text-white/70 text-xs font-label uppercase tracking-widest">Installations</div>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl flex items-center gap-4 w-64 ml-12"
+        >
+          <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shrink-0">
+            <span className="material-symbols-outlined text-white">home_iot_device</span>
+          </div>
+          <div>
+            <div className="text-white font-bold text-xl">99.9%</div>
+            <div className="text-white/70 text-xs font-label uppercase tracking-widest">System Uptime</div>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Animated Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+      >
+        <span className="text-[9px] font-label uppercase tracking-[0.2em] text-surface-bright/50">Scroll</span>
+        <motion.div 
+          animate={{ height: ["0px", "40px", "0px"], y: [0, 20, 40] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="w-[1px] bg-gradient-to-b from-surface-bright/80 to-transparent origin-top h-10"
+        />
+      </motion.div>
     </section>
   );
 };
