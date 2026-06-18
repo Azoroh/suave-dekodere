@@ -148,3 +148,8 @@
 - **Intent**: Optimize ProductModal for single-screen visibility.
 - **Action**: Refactoring ProductModal.jsx to prevent scrolling and implementing responsive scaling for all elements.
 - **Why**: User prefers a "one-glance" experience where no scrolling is required. Scaling down fonts and images on smaller screens ensures all product info and the "Enquire" button remain visible.
+
+## 2026-06-17 12:35
+- **Intent**: Optimize Navbar responsiveness for medium screens.
+- **Action**: Switching from desktop menu to mobile hamburger menu at the 'xl' breakpoint instead of 'md'.
+- **Why**: The previous 'md' breakpoint was too narrow for the number of nav links, causing a cramped and unprofessional look on tablets and smaller laptops. Using the mobile nav for these sizes ensures a clean and functional UI.

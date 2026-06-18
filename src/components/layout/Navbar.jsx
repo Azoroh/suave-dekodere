@@ -71,19 +71,19 @@ export const Navbar = ({ isGlass = true }) => {
             alt="Suave Innovations"
             loading="eager"
             decoding="async"
-            className={`hidden md:block w-auto object-contain transition-all duration-300 ${isScrolled ? "h-10" : "h-12"}`}
+            className={`hidden xl:block w-auto object-contain transition-all duration-300 ${isScrolled ? "h-10" : "h-12"}`}
           />
           <img
             src={mobileLogo}
             alt="Suave Innovations"
             loading="eager"
             decoding="async"
-            className={`block md:hidden w-auto object-contain transition-all duration-300 ${isScrolled ? "h-12" : "h-14"}`}
+            className={`block xl:hidden w-auto object-contain transition-all duration-300 ${isScrolled ? "h-12" : "h-14"}`}
           />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden xl:flex items-center gap-8">
           {navLinks.map((link) => {
             const isPathActive = location.pathname === link.href;
             const isSubmenuActive = link.submenu?.some(
@@ -162,7 +162,7 @@ export const Navbar = ({ isGlass = true }) => {
 
         {/* Mobile Hamburger Button */}
         <button
-          className="micro-button md:hidden text-[#30332f] p-2"
+          className="micro-button xl:hidden text-[#30332f] p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <span className="material-symbols-outlined text-2xl">
@@ -178,7 +178,7 @@ export const Navbar = ({ isGlass = true }) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden absolute top-full left-0 w-full bg-surface border-t border-outline-variant/20 py-6 px-6 flex flex-col gap-4 shadow-xl overflow-hidden"
+            className="xl:hidden absolute top-full left-0 w-full bg-surface border-t border-outline-variant/20 py-6 px-6 flex flex-col gap-4 shadow-xl overflow-hidden"
           >
             {navLinks.map((link) => {
               const isActive = location.pathname === link.href;
