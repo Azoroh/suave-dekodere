@@ -56,7 +56,7 @@ export const Navbar = ({ isGlass = true }) => {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full px-6 md:px-16 transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full px-6 md:px-16 transition-[background-color,padding,backdrop-filter] duration-300 ${
         isScrolled ? "py-4 md:py-4" : "py-6"
       } ${isGlass && !isMobileMenuOpen ? "glass-nav" : "bg-surface"}`}
     >
@@ -172,12 +172,14 @@ export const Navbar = ({ isGlass = true }) => {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            key="mobile-nav"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="xl:hidden absolute top-full left-0 w-full bg-surface border-t border-outline-variant/20 py-6 px-6 flex flex-col gap-4 shadow-xl overflow-hidden"
           >
             {navLinks.map((link) => {

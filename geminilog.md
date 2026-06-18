@@ -158,3 +158,11 @@
 - **Intent**: Fix Navbar layout bug at 1025px screen width.
 - **Action**: Changing visibility breakpoint for standalone "Book a Consultation" button from 'lg' to 'xl' in Navbar.jsx.
 - **Why**: The rest of the Navbar logic was recently updated to switch to the mobile layout at 'xl'. Leaving the button at 'lg' caused it to appear alongside the hamburger menu on medium-large screens (like 1025px), cluttering the layout.
+
+## 2026-06-18 10:25
+- **Intent**: Fix mobile menu flickering and disappearance bug on tablet/medium views.n- **Action**: Adding key=\
+mobile-nav\ to the mobile menu motion.div, switching to opacity and y animation, and refining 
+av transitions.n- **Why**: AnimatePresence and height: \auto\ can be unstable without a key or when parent CSS transitions interfere. Stabilizing the component identity and using a simpler transform-based animation ensures consistent visibility across breakpoints.
+
+## 2026-06-18 10:35
+- **Intent**: Establish a new rule for commit message formatting.n- **Action**: Updating global GEMINI.md to exclude numbering/bullets in commit suggestions.n- **Why**: User preference for cleaner, unformatted commit messages to improve readability and ease of use.
