@@ -176,3 +176,8 @@ av transitions.n- **Why**: AnimatePresence and height: \auto\ can be unstable wi
 - **Intent**: Fix Shop modal rendering bug causing blurry background to persist.
 - **Action**: Refactored ProductModal.jsx to remove inner AnimatePresence, use motion.div as the root element, and ensure proper exit animations are tracked by the parent AnimatePresence in Shop/index.jsx.
 - **Why**: Nested AnimatePresence blocks and non-motion root nodes cause Framer Motion to lose track of exiting components, leading to orphaned DOM nodes (like the blurry backdrop) remaining active when rapidly opening and closing modals.
+
+## 2026-06-18 21:51
+- **Intent**: Remove the redundant and orphaned Services page.
+- **Action**: Deleted the src/pages/Services directory and removed its route from App.jsx.
+- **Why**: The page was no longer linked in the navigation, and its content has been superseded by the dedicated service pages (Smart Living, Design & Build, MEP, Solar). Removing dead code keeps the project clean and maintainable.
