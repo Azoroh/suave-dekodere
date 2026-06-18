@@ -166,3 +166,8 @@ av transitions.n- **Why**: AnimatePresence and height: \auto\ can be unstable wi
 
 ## 2026-06-18 10:35
 - **Intent**: Establish a new rule for commit message formatting.n- **Action**: Updating global GEMINI.md to exclude numbering/bullets in commit suggestions.n- **Why**: User preference for cleaner, unformatted commit messages to improve readability and ease of use.
+
+## 2026-06-18 21:35
+- **Intent**: Move Shop navlink, add icon, and increase font weight.
+- **Action**: Updated navLinks array in Navbar.jsx and added conditional styling/icon rendering for the Shop link.
+- **Why**: To highlight the Shop section and fulfill the user's layout and styling requests.

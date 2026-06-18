@@ -27,8 +27,8 @@ const navLinks = [
   },
   { name: "MEP", href: "/mep" },
   { name: "Solar", href: "/solar" },
-  { name: "Shop", href: "/shop" },
   { name: "Contact", href: "/contact" },
+  { name: "Shop", href: "/shop", isShop: true, icon: "shopping_bag" },
 ];
 
 export const Navbar = ({ isGlass = true }) => {
@@ -108,8 +108,13 @@ export const Navbar = ({ isGlass = true }) => {
                     isActive
                       ? "is-active text-[#4b6367] opacity-100"
                       : "text-[#30332f] opacity-70 hover:opacity-100 hover:text-[#4b6367]"
-                  }`}
+                  } ${link.isShop ? "font-semibold" : ""}`}
                 >
+                  {link.icon && (
+                    <span className="material-symbols-outlined text-[14px]">
+                      {link.icon}
+                    </span>
+                  )}
                   {link.name}
                   {hasSubmenu && (
                     <span
@@ -188,16 +193,21 @@ export const Navbar = ({ isGlass = true }) => {
                 <div key={link.name} className="flex flex-col gap-2">
                   <Link
                     to={link.href}
-                    className={`micro-text-link text-sm font-label uppercase tracking-widest transition-all duration-300 ${
+                    className={`micro-text-link text-sm font-label uppercase tracking-widest transition-all duration-300 flex items-center gap-1.5 ${
                       isActive
                         ? "text-[#4b6367] font-bold"
                         : "text-[#30332f] hover:text-[#4b6367]"
-                    }`}
+                    } ${link.isShop && !isActive ? "font-semibold" : ""}`}
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       window.scrollTo(0, 0);
                     }}
                   >
+                    {link.icon && (
+                      <span className="material-symbols-outlined text-[18px]">
+                        {link.icon}
+                      </span>
+                    )}
                     {link.name}
                   </Link>
                   {link.submenu && (
