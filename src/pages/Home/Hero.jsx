@@ -10,20 +10,42 @@ export const Hero = () => {
     const video = videoRef.current;
     if (!video) return;
 
+    let isIntersecting = false;
+
+    const attemptPlay = () => {
+      if (video && isIntersecting && document.visibilityState === "visible") {
+        video.play().catch(() => {});
+      }
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {});
+        isIntersecting = entry.isIntersecting;
+        if (isIntersecting) {
+          attemptPlay();
         } else {
           video.pause();
         }
       },
-      { threshold: 0.2 },
+      { threshold: 0.1 },
     );
 
     observer.observe(video);
 
-    return () => observer.disconnect();
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "hidden") {
+        video.pause();
+      } else {
+        attemptPlay();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, []);
 
   return (

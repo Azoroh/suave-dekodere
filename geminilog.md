@@ -186,3 +186,8 @@ av transitions.n- **Why**: AnimatePresence and height: \auto\ can be unstable wi
 - **Intent**: Optimize initial load time and perceived performance through code-splitting and lazy-loading.
 - **Action**: Refactored App.jsx to use React.lazy() and Suspense for all page routes, created a custom PageLoader component, and ensured all below-the-fold images across components (ProductCard, ProductModal) have loading="lazy" and decoding="async".
 - **Why**: Synchronous loading of all pages bloats the initial bundle size. Code-splitting loads only the requested page chunk, while image lazy-loading defers off-screen image requests, drastically improving TTI (Time to Interactive) and overall site performance.
+
+## 2026-06-18 22:15
+- **Intent**: Fix homepage video playing bug where it stops on tab switch or doesn't play initially.
+- **Action**: Updated the IntersectionObserver in Home/Hero.jsx to track tab visibility (visibilitychange) alongside viewport intersection, and added robust fallback play logic.
+- **Why**: Browsers automatically pause background videos. Returning to the tab does not trigger a new IntersectionObserver event, leaving the video paused. Tracking document.visibilityState ensures it resumes when the user comes back.
