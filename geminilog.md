@@ -171,3 +171,8 @@ av transitions.n- **Why**: AnimatePresence and height: \auto\ can be unstable wi
 - **Intent**: Move Shop navlink, add icon, and increase font weight.
 - **Action**: Updated navLinks array in Navbar.jsx and added conditional styling/icon rendering for the Shop link.
 - **Why**: To highlight the Shop section and fulfill the user's layout and styling requests.
+
+## 2026-06-18 21:42
+- **Intent**: Fix Shop modal rendering bug causing blurry background to persist.
+- **Action**: Refactored ProductModal.jsx to remove inner AnimatePresence, use motion.div as the root element, and ensure proper exit animations are tracked by the parent AnimatePresence in Shop/index.jsx.
+- **Why**: Nested AnimatePresence blocks and non-motion root nodes cause Framer Motion to lose track of exiting components, leading to orphaned DOM nodes (like the blurry backdrop) remaining active when rapidly opening and closing modals.

@@ -8,19 +8,20 @@ export const ProductModal = ({ product, onClose }) => {
   const { name, category, price, image, description } = product;
 
   return (
-    <AnimatePresence>
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 overflow-hidden">
-        {/* Backdrop */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="absolute inset-0 bg-black/70 backdrop-blur-md"
-        />
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 overflow-hidden"
+    >
+      {/* Backdrop */}
+      <div 
+        onClick={onClose}
+        className="absolute inset-0 bg-black/70 backdrop-blur-md cursor-pointer"
+      />
 
-        {/* Modal Content - Force non-scrollable and constrained height */}
-        <motion.div 
+      {/* Modal Content - Force non-scrollable and constrained height */}
+      <motion.div 
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -83,7 +84,6 @@ export const ProductModal = ({ product, onClose }) => {
             </div>
           </div>
         </motion.div>
-      </div>
-    </AnimatePresence>
+    </motion.div>
   );
 };
