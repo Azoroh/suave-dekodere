@@ -153,3 +153,8 @@
 - **Intent**: Optimize Navbar responsiveness for medium screens.
 - **Action**: Switching from desktop menu to mobile hamburger menu at the 'xl' breakpoint instead of 'md'.
 - **Why**: The previous 'md' breakpoint was too narrow for the number of nav links, causing a cramped and unprofessional look on tablets and smaller laptops. Using the mobile nav for these sizes ensures a clean and functional UI.
+
+## 2026-06-18 10:10
+- **Intent**: Fix Navbar layout bug at 1025px screen width.
+- **Action**: Changing visibility breakpoint for standalone "Book a Consultation" button from 'lg' to 'xl' in Navbar.jsx.
+- **Why**: The rest of the Navbar logic was recently updated to switch to the mobile layout at 'xl'. Leaving the button at 'lg' caused it to appear alongside the hamburger menu on medium-large screens (like 1025px), cluttering the layout.

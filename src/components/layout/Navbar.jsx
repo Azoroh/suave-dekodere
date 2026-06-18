@@ -152,7 +152,7 @@ export const Navbar = ({ isGlass = true }) => {
           })}
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Link to="/contact#inquiry">
             <Button variant="primary" size="sm">
               Book a Consultation
