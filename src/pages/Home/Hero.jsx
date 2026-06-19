@@ -121,6 +121,7 @@ export const Hero = () => {
         {/* Desktop: staggered three-line reveal */}
         {!isMobile && (
           <motion.h1 
+            variants={fadeUp}
             className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-surface-bright leading-[1.05] mb-8"
           >
             <motion.div variants={fadeUp} className="overflow-hidden">
