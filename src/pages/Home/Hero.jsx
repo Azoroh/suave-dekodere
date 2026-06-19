@@ -139,10 +139,10 @@ export const Hero = () => {
         {isMobile && (
           <motion.h1
             variants={fadeUp}
-            className="font-headline text-5xl font-bold tracking-tighter text-surface-bright leading-[1.05] mb-8 min-h-[3.5em]"
+            className="font-headline font-bold tracking-tighter text-surface-bright leading-[1.1] mb-8 whitespace-nowrap text-[8.5vw]"
           >
             {typewriterText}
-            <span className="inline-block w-[3px] h-[0.9em] bg-surface-bright/80 ml-1 align-middle animate-pulse" />
+            <span className="inline-block w-[2px] h-[0.85em] bg-surface-bright/80 ml-1 align-middle animate-pulse" />
           </motion.h1>
         )}
 
