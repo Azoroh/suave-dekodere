@@ -4,7 +4,7 @@ import { Button } from "../../components/ui/Button";
 
 export const SmartSystems = () => {
   return (
-    <section className="bg-surface-container-low py-24 md:py-32 px-6 md:px-16">
+    <section className="bg-surface-container-low py-24 md:py-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-2xl">

@@ -1,61 +1,11 @@
 import React from "react";
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "../../components/ui/Button";
 
 export const Hero = () => {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // Force muted to ensure autoplay works on dynamic loads (especially Safari)
-    video.defaultMuted = true;
-    video.muted = true;
-
-    // Assume true on mount since Hero is at the top of the page
-    let isIntersecting = true;
-
-    const attemptPlay = () => {
-      if (video && isIntersecting && document.visibilityState === "visible") {
-        video.play().catch(() => {});
-      }
-    };
-
-    // Force play on mount to bypass IntersectionObserver delay
-    attemptPlay();
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        isIntersecting = entry.isIntersecting;
-        if (isIntersecting) {
-          attemptPlay();
-        } else {
-          video.pause();
-        }
-      },
-      { threshold: 0 },
-    );
-
-    observer.observe(video);
-
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "hidden") {
-        video.pause();
-      } else {
-        attemptPlay();
-      }
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    return () => {
-      observer.disconnect();
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
-  }, []);
+  const { scrollY } = useScroll();
+  const backgroundY = useTransform(scrollY, [0, 1000], ["0%", "40%"]);
 
   // Animation variants
   const fadeUp = {
@@ -76,19 +26,20 @@ export const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center px-6 md:px-16 overflow-hidden pt-24 md:pt-0">
-      <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          className="w-full h-full object-cover grayscale-[30%] brightness-90"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/home-hero-poster.webp"
+      <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+        <motion.div 
+          className="absolute inset-0 w-full h-[140%] -top-[20%]"
+          style={{ y: backgroundY }}
         >
-          <source src="/home-hero-video.mp4" type="video/mp4" />
-        </video>
+          <img
+            className="w-full h-full object-cover grayscale-[30%] brightness-75"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+            alt="luxury modern architectural villa exterior at dusk with warm interior lighting and clean minimalist lines"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTO4fX9XTHQS5mrplo3pWkyYfK2MzyVUUAj8MmKhX8u9i2q3E33hMS69-KEKwM94Hb9CKgFzNnIvN9Rat2UD-V_6zmPByPAV94CmSj0BpJwmWf0nLLoDgXLC7fA50YD0Apr6Ve4BZYba4NzMFB-dL3hchmX_Fu76U7Uzv--kIN14e7XnCgsQs-TJfmf5faGQQuA7GmS7vzyhHHCnBiasPBvxpyreyElm9XoJK3okyx2J2xWdCLXQthztG6BvQ6Erwq7MFzRpX82dA"
+          />
+        </motion.div>
 
         {/* Dynamic Gradient Overlay instead of flat black */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />

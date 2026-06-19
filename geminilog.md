@@ -201,3 +201,8 @@ av transitions.n- **Why**: AnimatePresence and height: \auto\ can be unstable wi
 - **Intent**: Redesign the Home page Hero section to achieve a premium, state-of-the-art aesthetic.
 - **Action**: Implementing cinematic framer-motion typography animations, a dynamic gradient overlay, a floating glassmorphism widget, an animated scroll indicator, and enhanced button hover states in Hero.jsx.
 - **Why**: The user requested a design critique and approved a plan to elevate the Hero section from a standard static layout to an Awwwards-style dynamic experience to better reflect the brand's high-end craftsmanship.
+
+## 2026-06-19 02:28
+- **Intent**: Replace the homepage Hero video with a high-resolution parallax still image.
+- **Action**: Modified Hero.jsx to remove all video playback logic. Implemented framer-motion's useScroll and useTransform hooks to create a hardware-accelerated parallax effect on a static background image.
+- **Why**: The user felt the compressed video looked "cheap," especially on mobile devices. A high-resolution still image with parallax scrolling maintains the dynamic feel of the page while ensuring pixel-perfect sharpness and better performance across all devices.

@@ -5,7 +5,7 @@ import dekodereImg from "../../assets/images/dekodere_integration.avif";
 
 export const DekodereIntegration = () => {
   return (
-    <section className="bg-surface py-24 md:py-48 px-6 md:px-16 overflow-hidden">
+    <section className="bg-surface py-24 md:py-24 px-6 md:px-16 overflow-hidden">
       <div className="flex flex-col md:flex-row items-center gap-16 md:gap-32">
         <div className="w-full md:w-1/2 relative">
           <div className="absolute -top-10 -left-10 w-40 h-40 bg-tertiary-fixed/20 -z-10"></div>

@@ -4,7 +4,7 @@ import solarPanelImg from "../../assets/images/reliable_energy.avif";
 
 export const SolarEnergy = () => {
   return (
-    <section className="bg-surface py-24 md:py-32 px-6 md:px-16">
+    <section className="bg-surface py-24 md:py-24 px-6 md:px-16">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         <div className="md:col-span-5 order-2 md:order-1">
           <span className="font-label text-xs uppercase tracking-widest text-secondary mb-4 block">
