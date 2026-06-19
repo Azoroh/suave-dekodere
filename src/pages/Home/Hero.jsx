@@ -1,11 +1,70 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "../../components/ui/Button";
 
+// --- Typewriter Hook ---
+const PHRASES = ["Reliable Power.", "Smarter Living.", "Masterful Design."];
+const TYPE_SPEED = 70;   // ms per character typed
+const DELETE_SPEED = 40; // ms per character deleted
+const HOLD_DURATION = 1800; // ms to hold completed phrase
+
+function useTypewriter() {
+  const [displayed, setDisplayed] = useState("");
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const timeoutRef = useRef(null);
+
+  useEffect(() => {
+    const current = PHRASES[phraseIndex];
+
+    const tick = () => {
+      if (!isDeleting) {
+        // Still typing
+        if (displayed.length < current.length) {
+          setDisplayed(current.slice(0, displayed.length + 1));
+          timeoutRef.current = setTimeout(tick, TYPE_SPEED);
+        } else {
+          // Finished typing — hold then start deleting
+          timeoutRef.current = setTimeout(() => {
+            setIsDeleting(true);
+          }, HOLD_DURATION);
+        }
+      } else {
+        // Deleting
+        if (displayed.length > 0) {
+          setDisplayed(current.slice(0, displayed.length - 1));
+          timeoutRef.current = setTimeout(tick, DELETE_SPEED);
+        } else {
+          // Finished deleting — move to next phrase
+          setIsDeleting(false);
+          setPhraseIndex((i) => (i + 1) % PHRASES.length);
+        }
+      }
+    };
+
+    timeoutRef.current = setTimeout(tick, isDeleting ? DELETE_SPEED : TYPE_SPEED);
+    return () => clearTimeout(timeoutRef.current);
+  }, [displayed, isDeleting, phraseIndex]);
+
+  return displayed;
+}
+
 export const Hero = () => {
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], ["0%", "40%"]);
+
+  // Only run typewriter on mobile
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const typewriterText = useTypewriter();
 
   // Animation variants
   const fadeUp = {
@@ -41,7 +100,7 @@ export const Hero = () => {
           />
         </motion.div>
 
-        {/* Dynamic Gradient Overlay instead of flat black */}
+        {/* Dynamic Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10 opacity-60" />
       </div>
@@ -59,19 +118,33 @@ export const Hero = () => {
           Sustainable Energy, Smart Systems, and Artisanal Design
         </motion.span>
 
-        <motion.h1 
-          className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-surface-bright leading-[1.05] mb-8"
-        >
-          <motion.div variants={fadeUp} className="overflow-hidden">
-            Reliable Power.
-          </motion.div>
-          <motion.div variants={fadeUp} className="overflow-hidden">
-            Smarter Living.
-          </motion.div>
-          <motion.div variants={fadeUp} className="overflow-hidden">
-            Masterful Design.
-          </motion.div>
-        </motion.h1>
+        {/* Desktop: staggered three-line reveal */}
+        {!isMobile && (
+          <motion.h1 
+            className="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-surface-bright leading-[1.05] mb-8"
+          >
+            <motion.div variants={fadeUp} className="overflow-hidden">
+              Reliable Power.
+            </motion.div>
+            <motion.div variants={fadeUp} className="overflow-hidden">
+              Smarter Living.
+            </motion.div>
+            <motion.div variants={fadeUp} className="overflow-hidden">
+              Masterful Design.
+            </motion.div>
+          </motion.h1>
+        )}
+
+        {/* Mobile: single-line typewriter */}
+        {isMobile && (
+          <motion.h1
+            variants={fadeUp}
+            className="font-headline text-5xl font-bold tracking-tighter text-surface-bright leading-[1.05] mb-8 min-h-[3.5em]"
+          >
+            {typewriterText}
+            <span className="inline-block w-[3px] h-[0.9em] bg-surface-bright/80 ml-1 align-middle animate-pulse" />
+          </motion.h1>
+        )}
 
         <motion.p 
           variants={fadeUp}
@@ -97,7 +170,7 @@ export const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Floating Glass Widget */}
+      {/* Floating Glass Widget — desktop only */}
       <motion.div 
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
@@ -140,11 +213,11 @@ export const Hero = () => {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
       >
-        <span className="text-[9px] font-label uppercase tracking-[0.2em] text-surface-bright/50">Scroll</span>
+        <span className="text-[8px] font-label uppercase tracking-[0.25em] text-surface-bright/50">Scroll</span>
         <motion.div 
-          animate={{ height: ["0px", "40px", "0px"], y: [0, 20, 40] }}
+          animate={{ height: ["0px", "36px", "0px"], y: [0, 18, 36] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-[1px] bg-gradient-to-b from-surface-bright/80 to-transparent origin-top h-10"
+          className="w-[1px] bg-gradient-to-b from-surface-bright/70 to-transparent origin-top"
         />
       </motion.div>
     </section>
